@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    margin-left: 50px;
+}
+
+p {
+    font-size: 22px;
+    font-family: fantasy;
+}
+
+.url {
+    display: flex; 
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+a {
+    margin-right: 40px;
+}
