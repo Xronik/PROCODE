@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+button {
+    height: 45px;
+    width: 120px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
+    background: linear-gradient(#F8120F,
+    #ECAB33,
+    #D4BA3C,
+    #AA6412,
+    #406A3B);
+
+}
+
+a {
+    border-radius: 5px;
+    display: block;
+    height: 45px;
+    width: 120px;
+    margin: 20px;
+    background-color: aqua;
+    box-shadow: 2px 2px 2px 2px rgb(209, 207, 207);
+    /* background-color: linear-gradient(); */
+}
