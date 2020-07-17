@@ -1,0 +1,20 @@
+.main {
+    height: 450px;
+    width: 450px;
+    margin: 50px auto;
+}
+
+.cell {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.row:nth-child(2n+1) .cell:nth-child(2n+1) {
+    background-color: black;
+}
+
+.row:nth-child(2n) .cell:nth-child(2n) {
+    background-color: black;
+}
