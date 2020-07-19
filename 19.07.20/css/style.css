@@ -1,0 +1,29 @@
+.main {
+    margin:50px auto;
+    width: 600px;
+}
+
+.menu {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: lightcoral;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid black;
+}
+
+.menu:hover {
+    overflow: visible;
+    cursor: pointer;
+}
+
+.menu_item {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: lawngreen;
+    transform: translate3d(99%,-97.5%,0);
+    border: 1px solid black;
+}
