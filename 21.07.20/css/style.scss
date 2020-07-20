@@ -1,0 +1,122 @@
+@mixin nth__child {
+    @for $i from 1 through 9 {
+        &:nth-child(#{$i+1}) {
+            left: #{$i * -70}px;
+            position: relative;
+        }
+    }
+}
+
+@mixin front__mark {
+    position: absolute;
+    height: 45px;
+    width: 20px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.main {
+    margin: 0 auto;
+    width: 1600px;
+    height: 200px;
+    perspective: 1000px;
+    padding: 200px 0 0 200px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    height: 210px;
+    width: 150px;
+    transition: .6s linear;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    background-color: white;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+
+    @include nth__child;
+
+    &:hover {
+        transform: rotateY(180deg) translateY(-30%);
+        z-index: 5;
+        
+        .front {
+            box-shadow: 2px -2px 5px 1px rgb(153, 152, 152);
+            transition: 0.2s linear 0.4s;
+        }
+    }
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back__inner {
+    background: repeating-linear-gradient(30deg,white, white 4px, red 4px, red 16px);
+    border-radius: 5px;
+    height: 95%;
+    width: 92%;
+    margin: 4% auto;
+}
+
+.back {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.front__mark {
+
+    &-top {
+        @include front__mark;
+        left: 7px;
+        top: 5px;
+    }
+
+    &-bot {
+        @include front__mark;
+        right: 7px;
+        bottom: 5px;
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+
+    &-title {
+        font-size: 20px;
+        text-align: center;
+        margin: 95px auto 0;
+    }
+
+    &-bot-joker {
+        @include front__mark;
+        right: 30px;
+        bottom: -18px;
+    }
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.joker {
+    background-image: url(../images/joker.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
