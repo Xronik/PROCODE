@@ -13,4 +13,4 @@
 
 ## Ссылка на страничку:
 
-[Анимированые карты](https://xronik.github.io/PROCODE/19.07.20/index.html)
+[Анимированые карты](https://xronik.github.io/PROCODE/21.07.20/index.html)
