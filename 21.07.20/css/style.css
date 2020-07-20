@@ -1,0 +1,45 @@
+.main {
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+    background-color: lightcoral;
+}
+
+.container {
+    padding: 50px;
+}
+.card {
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* display: inline-block; */
+    position: absolute;
+    transition: 1s;
+    transform-style: preserve-3d;
+    perspective: 1000;
+}
+
+.back__inner {
+    background: repeating-linear-gradient(30deg,white, white 4px, red 4px, red 16px);
+    border-radius: 5px;
+    height: 95%;
+    width: 92%;
+    margin: 4% auto;
+}
+
+.back {
+    z-index: 2;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: royalblue;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
