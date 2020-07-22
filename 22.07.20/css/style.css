@@ -33,6 +33,7 @@
   line-height: 75px;
   font-size: 20px;
   background-color: black;
+  margin-right: -4px;
 }
 .header__menu-item-title, .header__menu-item-list {
   margin: 0 12px;
