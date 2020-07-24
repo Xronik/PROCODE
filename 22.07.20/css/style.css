@@ -10,7 +10,7 @@
 }
 
 .header {
-  max-width: 1400px;
+  min-width: 1080px;
   height: 75px;
   margin: 50px auto;
   background-color: black;

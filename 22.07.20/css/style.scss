@@ -9,12 +9,13 @@
     height: 75px;
 }
 .header {
-    max-width: 1400px;
+    min-width: 1080px;
     height: 75px;
     margin:50px auto;
     background-color: black;
     cursor: pointer;
     
+
     &__logo {
         margin-top: 13px;
         margin-left: 15px; 
