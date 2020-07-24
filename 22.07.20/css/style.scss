@@ -13,6 +13,7 @@
     height: 75px;
     margin:50px auto;
     background-color: black;
+    cursor: pointer;
     
     &__logo {
         margin-top: 13px;
@@ -29,9 +30,10 @@
 
     &__menu {
         color: white;
+        display: flex;
 
         &-item{
-            display: inline-block;
+            position: relative;
             line-height: 75px;
             font-size: 20px;
             background-color: black;
@@ -39,21 +41,37 @@
         
             &-title, &-list{
                 margin: 0 12px;
-                background-clip: padding-box;
                 background-color: black;
                 text-align: center;
             }
 
             &-title {
                 position: relative;
-            //     &:hover + .header__men {
-            //         display: inline-block;
-            //     }
+
+                &:hover + .header__menu-item-listcontainer {
+                    display: block;
+                }               
             }
 
-            // &-list {
-            //     display: none;
-            // }
+            &-list {
+                padding: 0 30px 0 12px;
+                display: flex;
+                position: relative;
+
+                &:hover .umbrella{
+                    display: block;
+                }
+            }
+
+            &-listcontainer {
+                display: none;
+                position: absolute;
+                left: -12px;
+
+                &:hover {
+                    display: block;
+                }
+            }
 
             &-title:after {
                 content: "";
@@ -63,7 +81,6 @@
                 height: 60%;
                 width: 1px;
                 border-left: 1px solid white;
-
             }
 
             &:first-child &-title:after {
@@ -71,4 +88,11 @@
             }
         }
     }
+}
+
+.umbrella {
+    padding-left: 15px;
+    position: absolute;
+    right: 7px;
+    display: none;
 }
