@@ -1,0 +1,144 @@
+@font-face {
+    font-family: "Houshka-bold"; 
+    src: url(../fonts/HouschkaPro-Bold.woff2); 
+}
+
+@font-face {
+    font-family: "Houshka-med"; 
+    src: url(../fonts/HouschkaPro-Medium.woff2); 
+}
+
+.container {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+body {
+    background-color: #266b97;
+}
+
+.header {
+    height: 468px;
+}
+
+.sky {
+    background-color: #b9d6ef;
+    border-bottom: 4px solid #ddecfa;
+    height: 464px;
+}
+
+.sea {
+    height: 320px;
+    border-top: 9px solid #327dad;;
+}
+
+.cloud-left {
+    position: absolute;
+    left: 131px;
+    top: -61px;
+}
+
+.cloud-right {
+    position: absolute;
+    right: 94px;
+    top: -174px;
+}
+
+.title {
+    font-family: "Houshka-bold";
+    font-size: 72px;
+    display: block;
+    color: #fefefe;
+    padding: 101px 0 0 243px;
+    line-height: 72px;
+}
+
+.subscr {
+    font-family: "Houshka-med";
+    margin: 11px 0 0 347px;
+    font-size: 14px;
+    color: #266b97;
+    text-decoration: none;
+    display: block;
+}
+
+.form {
+    margin: 18px 0 0 319px;
+}
+
+.input {
+    width: 225px;
+    height: 35px;
+    box-shadow: 0 1px 0 #ffffff, inset 0 2px 5px rgba(29, 26, 22, 0.2), inset 0 0 2px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-left: 13px;
+    font-weight: 400;
+    color: #808080;
+    outline: none;
+}
+
+.submit {
+    width: 90px;
+    height: 37px;
+    margin-left: 7px;
+    color: #ffffff;
+    font-family: "Houshka-bold";
+    font-size: 14px;
+    border: 1px solid #fbca44;
+    border-radius: 3px;
+    background: linear-gradient(#fad05d, #f8a426);
+    outline: none;
+    cursor: pointer;
+}
+
+.ship {
+    position: absolute;
+    bottom: -5px;
+    left: 301px;
+}
+
+.ice {
+    position: absolute;
+    top: 279px;
+    left: 326px;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    width: 293px;
+    margin: 53px 0 0 344px;
+}
+
+.time-item {
+    width: 70px;
+    height: 130px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-item_count {
+    background-color: #b9d6ef;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: #266b97;
+    font-family: "Houshka-med";
+    font-size: 24px;
+    line-height: 70px;
+}
+
+.time-item_title {
+    color: #f3f3f3;
+    font-family: "Houshka-bold";
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
