@@ -30,7 +30,7 @@ body {
 
 .sea {
     height: 320px;
-    border-top: 9px solid #327dad;;
+    border-top: 9px solid #327dad;
 }
 
 .cloud-left {
@@ -101,6 +101,7 @@ body {
     position: absolute;
     bottom: -5px;
     left: 301px;
+    animation: ship 3s infinite linear;
 }
 
 .ice {
@@ -143,3 +144,19 @@ body {
     text-transform: uppercase;
     margin-top: 5px;
 }
+
+@keyframes ship {
+    0% {
+        transform:   rotate(2deg);
+    }
+    33% {
+        transform:   translateY(-2px)  rotate(-2deg) ;
+    }
+    66% {
+        transform:   translateY(2px) rotate(-2deg);
+    }
+    100% {
+        transform:  rotate(2deg);
+    }
+}
+
