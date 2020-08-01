@@ -1,0 +1,349 @@
+@import "../../node_modules/normalize.css/normalize";
+
+$maincolor1: #F2C24D;
+$maincolor2: white;
+$maincolor3: black;
+$maincolor4: #F2A04A;
+$mainlinear: linear-gradient(to right, #29317E, #1C2251);
+
+@font-face {
+    font-family: 'ProximaNova-semibold';
+    src: url(../fonts/ProximaNova-Semibold.woff2);
+}
+
+@font-face {
+    font-family: 'ProximaNova-black';
+    src: url(../fonts/ProximaNova-Black.woff2);
+}
+
+@font-face {
+    font-family: 'ProximaNova-bold';
+    src: url(../fonts/ProximaNova-Bold.woff2);
+}
+
+@font-face {
+    font-family: 'ProximaNova-regular';
+    src: url(../fonts/ProximaNova-Regular.woff2);
+}
+
+@mixin point() {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $maincolor2;
+    position: absolute;
+}
+
+@mixin line() {
+    position: absolute;
+    border: 1px solid $maincolor2;
+}
+
+body {
+    background-color: $maincolor2;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header {
+    width: 1920px;
+    height: 1046px;
+    background: linear-gradient(to right, #29317E, #1C2251);
+    margin: 0 auto;
+    position: relative;
+
+    &_top {
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $maincolor2;
+
+        &-logo {
+            font-size: 36px;
+            letter-spacing: 0.02em;
+            font-family: 'ProximaNova-black';
+        }
+
+        &-phone {
+            display: flex;
+            align-items: center;
+
+            &-img {
+                margin:7px 13px 0 0;
+            }
+
+            &-number {
+                font-family: 'ProximaNova-semibold';
+                font-size: 22px;
+                font-weight: bold;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+
+    &_main {
+        margin-top: 131px;
+        width: 528px;
+
+        &-text {
+            font-family: 'ProximaNova-black';
+            font-size: 36px;
+            line-height: 42px;
+            letter-spacing: 0.02em;
+            color: $maincolor2;
+            &-ending {
+                color: $maincolor1;
+            }
+        }
+
+        &-list {
+            margin-top: 62px;
+            &-item {
+                margin: 0 0 29px 70px;
+                color: $maincolor2;
+                font-family: 'ProximaNova-semibold';
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                position: relative;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 42px;
+                    border: 1px solid $maincolor4;
+                    left: -58px;
+                    top: 8px;
+                    background-color: $maincolor4;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border: 2px solid $maincolor4;
+                    border-radius: 50%;
+                    top: 3px;
+                    left: -69px;
+                }
+            }
+        }
+
+        &-button {
+            margin-top: 61px;
+            width: 280px;
+            height: 58px;
+            padding: 17px 0 0 71px;
+            border: 2px solid $maincolor4;
+            border-radius: 100px;
+            color: $maincolor2;
+            line-height: 22px;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            font-family: 'ProximaNova-semibold';
+            font-weight: 600;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0px 4px 4px rgba(0,0,0,0.25), inset 0px 4px 4px rgba(0,0,0,0.25);
+            cursor: pointer;
+            user-select: none;
+            &:after {
+                content: '';
+                position: absolute;
+                border: 1px solid $maincolor2;
+                width: 23px;
+                top: 26px;
+                left: 30px;
+            }
+            &:active {
+                transform: translateY(2px);
+            }
+        }
+
+        &-img{
+            width: 986px;
+            height: 973px;
+            background-image: url(../img/antminer.png);
+            position: absolute;
+            left: 333px;
+            top: 23px;
+
+            &-toptext1 {
+                font-family: 'ProximaNova-bold';
+                font-size: 48px;
+                line-height: 56px;
+                letter-spacing: 0.02em;
+                font-weight: bold;
+                position: absolute;
+                color: $maincolor2;
+                top: 159px;
+                left: 401px;
+                sup {
+                    color: $maincolor1; 
+                }
+            }
+            &-toptext2 {
+                position: absolute;
+                font-size: 14px;
+                line-height: 16px;
+                color: $maincolor2;
+                top: 210px;
+                left: 401px;
+                font-family: 'ProximaNova-regular';
+            }
+            &-topline1 {
+                @include line();                
+                top: 242px;
+                left: 404px;
+                height: 23px;
+                &:before {
+                    @include point();
+                    top: -4px;
+                    left: -3px;
+                }
+            }
+            &-topline2 {
+                @include line();                
+                top: 292px;
+                left: 232px;
+                width: 176px;
+                transform: rotate(-17.95deg);
+                background-color: $maincolor2;
+            }
+            &-topline3 { 
+                @include line();               
+                top: 320px;
+                left: 235px;
+                height: 50px;
+                &:after {
+                    @include point();
+                    bottom: -4px;
+                    left: -3px;
+                }
+            }
+            &-btmleftline1 {
+                @include line();                
+                top: 693px;
+                left: 113px;
+                height: 46px;
+                &::before {
+                    @include point();
+                    bottom: -4px;
+                    left: -3px;
+                }
+            }
+            &-btmleftline2 {
+                @include line();                
+                top: 693px;
+                left: 113px;
+                width: 148px;
+                &::before {
+                    @include point();
+                    bottom: -3px;
+                    right: -3px;
+                }
+            }
+            &-btmrgtline { 
+                @include line();            
+                top: 587px;
+                left: 749px;
+                height: 98px;
+                &::before {
+                    @include point();
+                    top: -3px;
+                    right: -3px;
+                }
+                &::after {
+                    @include point();
+                    bottom: -3px;
+                    right: -3px;
+                }
+            }
+            &-btmrgttext {
+                position: absolute;
+                top: 698px;
+                left: 586px;
+                width: 175px;
+                height: 52px;
+                font-family: 'ProximaNova-bold';
+                font-size: 18px;
+                line-height: 21px;
+                text-align: right;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: $maincolor1;
+                span {
+                    color: $maincolor2;
+                    font-size: 24px;
+                    line-height: 31px;
+                }
+            }
+            &-mouse {
+                position: absolute;
+                top: 846px;
+                left: 208px;
+            }
+        }
+    }
+}
+
+.line {
+    display: block;
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:nth-child(1) {
+        width: 1920px;
+        top: 92px;
+    }
+    &:nth-child(2) {
+        height: 874px;
+        left: 110px;
+        top: 92px;
+    }
+    &:nth-child(3) {
+        left: calc(110px + 340px);
+        height: 107px;
+        top: 92px;
+    }
+    &:nth-child(4) {
+        left: calc(110px + 340px);
+        height: 245px;
+        top: 721px;
+    }
+    &:nth-child(5) {
+        left: calc(110px + 680px);
+        height: 107px;
+        top: 92px;
+    }
+    &:nth-child(6) {
+        left: calc(110px + 680px);
+        height: 600px;
+        top: 366px;
+    }
+    &:nth-child(7) {
+        height: 874px;
+        left: calc(110px + 1020px);
+        top: 92px;
+    }
+    &:nth-child(8) {
+        height: 874px;
+        left: calc(110px + 1360px);
+        top: 92px;
+    }
+    &:nth-child(9) {
+        height: 874px;
+        left: calc(110px + 1700px);
+        top: 92px;
+    }
+}
