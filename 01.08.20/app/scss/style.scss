@@ -91,6 +91,25 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
     }
 }
 
+@mixin title() {
+    font-family: 'ProximaNova-black';
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-left: 58px;
+    &:after {
+        content: '';
+        display: block;
+        position: relative;
+        width: 41px;
+        height: 7px;
+        background-color: $maincolor4;
+        top: -26px;
+        left: -58px;
+    }
+}
+
 body {
     background-color: $maincolor2;
 }
@@ -107,6 +126,57 @@ body {
     background: linear-gradient(to right, #29317E, #1C2251);
     margin: 0 auto;
     position: relative;
+
+    &_line {
+        display: block;
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    
+        &:nth-child(1) {
+            width: 1920px;
+            top: 92px;
+        }
+        &:nth-child(2) {
+            height: 874px;
+            left: 110px;
+            top: 92px;
+        }
+        &:nth-child(3) {
+            left: calc(110px + 340px);
+            height: 107px;
+            top: 92px;
+        }
+        &:nth-child(4) {
+            left: calc(110px + 340px);
+            height: 245px;
+            top: 721px;
+        }
+        &:nth-child(5) {
+            left: calc(110px + 680px);
+            height: 107px;
+            top: 92px;
+        }
+        &:nth-child(6) {
+            left: calc(110px + 680px);
+            height: 600px;
+            top: 366px;
+        }
+        &:nth-child(7) {
+            height: 874px;
+            left: calc(110px + 1020px);
+            top: 92px;
+        }
+        &:nth-child(8) {
+            height: 874px;
+            left: calc(110px + 1360px);
+            top: 92px;
+        }
+        &:nth-child(9) {
+            height: 874px;
+            left: calc(110px + 1700px);
+            top: 92px;
+        }
+    }
 
     &_top {
         height: 90px;
@@ -304,81 +374,16 @@ body {
     }
 }
 
-.line {
-    display: block;
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    &:nth-child(1) {
-        width: 1920px;
-        top: 92px;
-    }
-    &:nth-child(2) {
-        height: 874px;
-        left: 110px;
-        top: 92px;
-    }
-    &:nth-child(3) {
-        left: calc(110px + 340px);
-        height: 107px;
-        top: 92px;
-    }
-    &:nth-child(4) {
-        left: calc(110px + 340px);
-        height: 245px;
-        top: 721px;
-    }
-    &:nth-child(5) {
-        left: calc(110px + 680px);
-        height: 107px;
-        top: 92px;
-    }
-    &:nth-child(6) {
-        left: calc(110px + 680px);
-        height: 600px;
-        top: 366px;
-    }
-    &:nth-child(7) {
-        height: 874px;
-        left: calc(110px + 1020px);
-        top: 92px;
-    }
-    &:nth-child(8) {
-        height: 874px;
-        left: calc(110px + 1360px);
-        top: 92px;
-    }
-    &:nth-child(9) {
-        height: 874px;
-        left: calc(110px + 1700px);
-        top: 92px;
-    }
-}
-
 .about {
     position: relative;
     width: 1920px;
-    height: 743px;
+    height: 778px;
     margin: 0 auto;
     background-color: $maincolor2;
     color: $maincolor3;
     &_title {
-        font-family: 'ProximaNova-black';
-        font-size: 36px;
-        line-height: 42px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        margin:35px 0 0 58px;
-        &:before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 41px;
-            height: 7px;
-            background-color: $maincolor4;
-            top: 18px;
-            left: 0;
-        }
+        @include title();
+        padding-top: 35px;
     }
     &_info {
         margin-top: 37px;
@@ -404,12 +409,12 @@ body {
         width: 553px;
         height: 367px;
         left: 615px;
-        top: 33px;
+        top: 68px;
         background-image: url(../img/antminer2.png);
     }
     &_imgprice1 {
         @include price();
-        top: 400px;
+        top: 435px;
         left: 725px;
         color: $maincolor3;
         width: 140px;
@@ -424,9 +429,107 @@ body {
     }
     &_imgprice2 {
         @include price();
-        top: 400px;
+        top: 435px;
         left: 971px;
         color: $maincolor3;
         width: 140px;
     }
+}
+
+.scheme {
+    width: 1920px;
+    height: 757px;
+    margin: 0 auto;
+    background: #F4F8FA;
+    &_circle {
+        position: absolute;
+        border: 3px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 50%;
+        z-index: 10;
+        &:nth-child(1) {
+            left: calc(671.75px - 405px);
+            top: 139px;
+            width: 536.23px;
+            height: 545px;
+        }
+        &:nth-child(2) {
+            left: calc(587.29px - 405px);
+            top: 52px;
+            width: 706.13px;
+            height: 719px;
+        }
+        &:nth-child(3) {
+            left: calc(505.78px - 405px);
+            top: -31px;
+            width: 869.16px;
+            height: 885px;
+        }
+    }
+    &_rectangle {
+        position: absolute;
+        width: 876px;
+        height: 367px;
+        border: 4px solid $maincolor4;
+        top: 232px;
+        left: 92px;
+    }
+    &_square {
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        background-image: url(../img/square.png);
+        &:nth-child(5) {
+            top: 221px;
+            left: 355px;
+        }
+        &:nth-child(6) {
+            top: 221px;
+            left: 729px;
+        }
+        &:nth-child(7) {
+            top: 336px;
+            left: 84px;
+        }
+        &:nth-child(8) {
+            top: 336px;
+            left: 962px;
+        }
+        &:nth-child(9) {
+            top: 466px;
+            left: 84px;
+        }
+        &:nth-child(10) {
+            top: 466px;
+            left: 962px;
+        }
+        &:nth-child(11) {
+            top: 592px;
+            left: 365px;
+        }
+        &:nth-child(12) {
+            top: 592px;
+            left: 722px;
+        }
+    }
+    &_circle-cntr {
+        width: 63px;
+        height: 63px;
+        position: absolute;
+        background-image: url(../img/center-circle.png);
+        top: 380px;
+        left: 503px;
+    }
+    &_title {
+        @include title();
+        padding-top: 74px;
+    }
+}
+
+
+.services {
+    width: 1920px;
+    height: 806px;
+    background: $mainlinear;
+    margin: 0 auto;
 }
