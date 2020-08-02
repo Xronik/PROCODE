@@ -41,6 +41,56 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
     border: 1px solid $maincolor2;
 }
 
+@mixin btn() {
+    width: 280px;
+    height: 58px;
+    padding: 17px 0 0 71px;
+    border: 2px solid $maincolor4;
+    border-radius: 100px;
+    color: $maincolor2;
+    line-height: 22px;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    font-family: 'ProximaNova-semibold';
+    font-weight: 600;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25), inset 0px 4px 4px rgba(0,0,0,0.25);
+    cursor: pointer;
+    user-select: none;
+    &:after {
+        content: '';
+        position: absolute;
+        border: 1px solid $maincolor2;
+        width: 23px;
+        top: 26px;
+        left: 30px;
+    }
+    &:active {
+        transform: translateY(2px);
+    }
+}
+
+@mixin price() {
+    font-family: 'ProximaNova-bold';
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+    position: absolute;
+    sup {
+        color: $maincolor1; 
+    }
+    span {
+        font-size: 14px;
+        line-height: 16px;
+        font-family: 'ProximaNova-regular';
+        display: block;
+        top: -4px;
+        position: relative;
+    }
+}
+
 body {
     background-color: $maincolor2;
 }
@@ -138,36 +188,9 @@ body {
             }
         }
 
-        &-button {
+        &-btn {
             margin-top: 61px;
-            width: 280px;
-            height: 58px;
-            padding: 17px 0 0 71px;
-            border: 2px solid $maincolor4;
-            border-radius: 100px;
-            color: $maincolor2;
-            line-height: 22px;
-            font-size: 18px;
-            letter-spacing: 0.02em;
-            font-family: 'ProximaNova-semibold';
-            font-weight: 600;
-            text-transform: uppercase;
-            box-sizing: border-box;
-            position: relative;
-            box-shadow: 0px 4px 4px rgba(0,0,0,0.25), inset 0px 4px 4px rgba(0,0,0,0.25);
-            cursor: pointer;
-            user-select: none;
-            &:after {
-                content: '';
-                position: absolute;
-                border: 1px solid $maincolor2;
-                width: 23px;
-                top: 26px;
-                left: 30px;
-            }
-            &:active {
-                transform: translateY(2px);
-            }
+            @include btn();
         }
 
         &-img{
@@ -178,28 +201,12 @@ body {
             left: 333px;
             top: 23px;
 
-            &-toptext1 {
-                font-family: 'ProximaNova-bold';
-                font-size: 48px;
-                line-height: 56px;
-                letter-spacing: 0.02em;
-                font-weight: bold;
-                position: absolute;
+            &-toptext {
+                @include price();
                 color: $maincolor2;
                 top: 159px;
                 left: 401px;
-                sup {
-                    color: $maincolor1; 
-                }
-            }
-            &-toptext2 {
-                position: absolute;
-                font-size: 14px;
-                line-height: 16px;
-                color: $maincolor2;
-                top: 210px;
-                left: 401px;
-                font-family: 'ProximaNova-regular';
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             }
             &-topline1 {
                 @include line();                
@@ -345,5 +352,81 @@ body {
         height: 874px;
         left: calc(110px + 1700px);
         top: 92px;
+    }
+}
+
+.about {
+    position: relative;
+    width: 1920px;
+    height: 743px;
+    margin: 0 auto;
+    background-color: $maincolor2;
+    color: $maincolor3;
+    &_title {
+        font-family: 'ProximaNova-black';
+        font-size: 36px;
+        line-height: 42px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin:35px 0 0 58px;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 41px;
+            height: 7px;
+            background-color: $maincolor4;
+            top: 18px;
+            left: 0;
+        }
+    }
+    &_info {
+        margin-top: 37px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 625px;
+        height: 455px;  
+        &-text {
+            font-family: 'ProximaNova-regular';
+            font-size: 18px;
+            line-height: 30px;
+        }
+    }
+    &_btn {
+        @include btn();
+        margin-top: 51px;
+        background-color: $maincolor1;
+        box-shadow: none;
+    }
+    &_img {
+        position: absolute;
+        width: 553px;
+        height: 367px;
+        left: 615px;
+        top: 33px;
+        background-image: url(../img/antminer2.png);
+    }
+    &_imgprice1 {
+        @include price();
+        top: 400px;
+        left: 725px;
+        color: $maincolor3;
+        width: 140px;
+        &:after {
+            position: absolute;
+            content: '';
+            height: 15px;
+            right: -50px;
+            top: 17px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+    &_imgprice2 {
+        @include price();
+        top: 400px;
+        left: 971px;
+        color: $maincolor3;
+        width: 140px;
     }
 }

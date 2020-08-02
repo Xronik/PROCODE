@@ -4,4 +4,4 @@
 
 ## Ссылка на страничку:
 
-[Резиновый хедер с меню](https://xronik.github.io/PROCODE/01.08.20/app/index.html)
+[Верстка](https://xronik.github.io/PROCODE/01.08.20/app/index.html)
