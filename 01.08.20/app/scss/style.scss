@@ -22,6 +22,11 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
 }
 
 @font-face {
+    font-family: 'ProximaNova-extrabold';
+    src: url(../fonts/ProximaNova-Extrabld.woff2);
+}
+
+@font-face {
     font-family: 'ProximaNova-regular';
     src: url(../fonts/ProximaNova-Regular.woff2);
 }
@@ -146,6 +151,21 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
         border-radius: 50%;
         top: 3px;
         left: -69px;
+    }
+}
+
+@mixin payment-item {
+    margin-top: 17px;
+    font-family: 'ProximaNova-extrabold';
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    height: 64px;
+    span {
+        font-family: 'ProximaNova-regular';
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -424,7 +444,7 @@ body {
     &_btn {
         @include btn();
         margin-top: 51px;
-        background-color: $maincolor1;
+        background: linear-gradient($maincolor4, $maincolor1);
         box-shadow: none;
     }
     &_img {
@@ -609,7 +629,6 @@ body {
     }
 }
 
-
 .services {
     width: 1920px;
     height: 806px;
@@ -712,5 +731,50 @@ body {
         border: 1px solid $maincolor1;
         border-radius: 0px 75px 0px 91px;
         transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+}
+
+.payment {
+    width: 1920px;
+    height: 716px;
+    background-color: $maincolor2;
+    &_title {
+        @include title();
+        padding-top: 87px;
+    }
+    &_text {
+        width: 812px;
+        height: 93px;
+        margin-top: 30px;
+        font-family: 'ProximaNova-regular';
+        font-size: 18px;
+        line-height: 30px;
+    }
+    &_form {
+        margin-top: 54px;
+        display: flex;
+        justify-content: space-between;
+        &-item-text1 {
+            @include payment-item();
+            width: 143px;             
+        }
+        &-item-text2 {
+            @include payment-item();
+            width: 224px;            
+        }
+        &-item-text3 {
+            @include payment-item();
+            width: 137px;            
+        }
+        &-item-text4 {
+            @include payment-item();
+            width: 203px;            
+        }
+    }
+    &_btn {
+        @include btn();
+        background: linear-gradient($maincolor4, $maincolor1);
+        box-shadow: none;
+        margin-top: 107px;
     }
 }
