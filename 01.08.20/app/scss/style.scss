@@ -79,7 +79,7 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
     letter-spacing: 0.02em;
     position: absolute;
     sup {
-        color: $maincolor1; 
+        color: $maincolor4; 
     }
     span {
         font-size: 14px;
@@ -120,6 +120,35 @@ $mainlinear: linear-gradient(to right, #29317E, #1C2251);
     z-index: 4;
 }
 
+@mixin list() {
+    font-family: 'ProximaNova-semibold';
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    position: relative;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 42px;
+        border: 1px solid $maincolor4;
+        left: -58px;
+        top: 8px;
+        background-color: $maincolor4;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 2px solid $maincolor4;
+        border-radius: 50%;
+        top: 3px;
+        left: -69px;
+    }
+}
+
 body {
     background-color: $maincolor2;
 }
@@ -138,9 +167,8 @@ body {
     position: relative;
 
     &_line {
-        display: block;
         position: absolute;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
     
         &:nth-child(1) {
             width: 1920px;
@@ -238,33 +266,7 @@ body {
             &-item {
                 margin: 0 0 29px 70px;
                 color: $maincolor2;
-                font-family: 'ProximaNova-semibold';
-                font-size: 18px;
-                line-height: 21px;
-                font-weight: 600;
-                letter-spacing: 0.02em;
-                position: relative;
-                &:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 42px;
-                    border: 1px solid $maincolor4;
-                    left: -58px;
-                    top: 8px;
-                    background-color: $maincolor4;
-                }
-                &:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 8px;
-                    height: 8px;
-                    border: 2px solid $maincolor4;
-                    border-radius: 50%;
-                    top: 3px;
-                    left: -69px;
-                }
+                @include list();
             }
         }
 
@@ -615,4 +617,100 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 5;
+    color: $maincolor2;
+    &_line {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        &:nth-child(1) {
+            height: 806px;
+            left: 110px;
+            top: 0;
+         }
+        &:nth-child(2) {
+            height: 81px;
+            left: calc(110px + 340px);
+            top: 0;
+        }
+        &:nth-child(3) {
+            height: 84px;
+            left: calc(110px + 340px);
+            bottom: 0;
+        }
+        &:nth-child(4) {
+            height: 81px;
+            left: calc(110px + 680px);
+            top: 0;
+        }
+        &:nth-child(5) {
+            height: 301px;
+            left: calc(110px + 680px);
+            bottom: 0;
+        }
+        &:nth-child(6) {
+            height: 806px;
+            left: calc(110px + 1020px);
+            top: 0;
+        }
+        &:nth-child(7) {
+            height: 806px;
+            left: calc(110px + 1360px);
+            top: 0;
+        }
+        &:nth-child(8) {
+            height: 806px;
+            left: calc(110px + 1700px);
+            top: 0;
+        }
+    }
+    &_title {
+        @include title();
+        padding-top: 103px;
+    }
+    &_list {
+        margin-top: 61px;
+        &-item {
+            margin: 0 0 29px 51px;
+            @include list();
+            &:before {
+                left: -39px;
+                width: 26px;
+            }
+            &::after {
+                left: -50px;
+            }
+        }
+    }
+    &_price {
+        @include price();
+        margin-top: 48px;
+        position: relative;
+        span {
+            left: 106px;
+            top: -24px;
+            letter-spacing: 0;
+        }
+    }
+    &_btn {
+        @include btn();
+        margin-top: 33px;
+    }
+    &_img {
+        background-image: url(../img/antminer3.png);
+        position: absolute;
+        width: 528px;
+        height: 373px;
+        left: 561px;
+        top: 197px;
+        z-index: 2;
+    }
+    &_imgback {
+        position: absolute;
+        width: 528px;
+        height: 373px;
+        left: 582px;
+        top: 218px;
+        border: 1px solid $maincolor1;
+        border-radius: 0px 75px 0px 91px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
 }
