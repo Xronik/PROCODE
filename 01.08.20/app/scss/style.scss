@@ -943,6 +943,30 @@ body {
     position: relative;
     background: $mainlinear;
     color: $maincolor2;
+    &_circle {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        border-radius: 50%;
+        &:nth-child(1) {
+            left: calc(1177.19px - 405px);
+            top: -56px;
+            width: 525.63px;
+            height: 525.63px;
+        }
+        &:nth-child(2) {
+            left: calc(1142.87px - 405px);
+            top: -90px;
+            width: 595.03px;
+            height: 595.03px;
+        }
+        &:nth-child(3) {
+            left: calc(1107px - 405px);
+            top: -126px;
+            width: 666px;
+            height: 666px;
+        }
+    }
     &_title {
         @include title();
         padding-top: 79px;
@@ -1011,4 +1035,56 @@ body {
     height: 149px;
     margin: 0 auto;
     background: $mainlinear;
+}
+
+.popup {
+    position: fixed;
+    width: 484px;
+    height: 330px;
+    background-color: $maincolor2;
+    z-index: 20;
+    border-radius: 5px;
+    margin:0 auto;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    visibility: hidden;
+    &_title {
+        font-family: 'ProximaNova-black';
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin: 31px 0 30px 21px;
+    }
+    &_input {
+        width: 439px;
+        height: 56px;
+        margin: 0 0 16px 22px;
+        background: #F4F8FA;
+        border-radius: 5px;
+        border: none;
+        font-family: 'ProximaNova-regular';
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        color: #828282;
+        padding-left: 23px;
+        box-sizing: border-box;
+    }
+    &_btn {
+        @include btn();
+        background: linear-gradient($maincolor4, $maincolor1);
+        box-shadow: none;
+        margin: 16px 0 0 22px;
+    }
+    &_anchor {
+        position: absolute;
+        display: block;
+        width: 14px;
+        height: 14px;
+        top: 38px;
+        right: 23px;
+        background-image: url(../img/cancel.png);
+        background-size: cover;
+    }
 }
