@@ -738,6 +738,7 @@ body {
     width: 1920px;
     height: 716px;
     background-color: $maincolor2;
+    margin: 0 auto;
     &_title {
         @include title();
         padding-top: 87px;
@@ -776,5 +777,104 @@ body {
         background: linear-gradient($maincolor4, $maincolor1);
         box-shadow: none;
         margin-top: 107px;
+    }
+}
+
+.advantages {
+    width: 1920px;
+    height: 1080px;
+    background: $mainlinear;
+    margin: 0 auto;
+    color: $maincolor2;
+    position: relative;
+    &_line {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        &:nth-child(1) {
+            height: 1080px;
+            left: 110px;
+            top: 0;
+         }
+        &:nth-child(2) {
+            height: 84px;
+            left: calc(110px + 340px);
+            top: 0;
+        }
+        &:nth-child(3) {
+            height: 84px;
+            left: calc(110px + 680px);
+            top: 0;
+        }
+        &:nth-child(4) {
+            height: 896px;
+            left: calc(110px + 680px);
+            bottom: 0;
+        }
+        &:nth-child(5) {
+            height: 1080px;
+            left: calc(110px + 1020px);
+            top: 0;
+        }
+        &:nth-child(6) {
+            height: 289px;
+            left: calc(110px + 1360px);
+            top: 0;
+        }
+        &:nth-child(7) {
+            height: 629px;
+            left: calc(110px + 1360px);
+            bottom: 0;
+        }
+        &:nth-child(8) {
+            height: 1080px;
+            left: calc(110px + 1700px);
+            top: 0;
+        }
+    }
+    &_title {
+        @include title();
+        padding-top: 111px;
+    }
+    &_main {
+        margin-top: 72px;       
+        &-top, &-btm {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        } 
+        &-btm {
+            margin-top: 65px;
+        }
+        &-item {
+            width: 313px;
+            height: 274px;
+            text-transform: uppercase;
+            font-family: 'ProximaNova-extrabold';
+            font-size: 26px;
+            line-height: 43px;
+            letter-spacing: 0.02em;
+            color: $maincolor4;
+            padding-top: 88px;
+            box-sizing: border-box;
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+            }
+            span {
+                font-family: 'ProximaNova-regular';
+                font-size: 18px;
+                line-height: 30px;
+                color: #FFFFFF;
+                text-transform: none;
+                display: block;
+                margin-top: 13px;
+                width: 267px;
+            }
+        }
+    }
+    &_btn {
+        @include btn();
+        margin-top: 130px;
     }
 }
