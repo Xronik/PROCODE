@@ -878,3 +878,137 @@ body {
         margin-top: 130px;
     }
 }
+
+.clients {
+    width: 1920px;
+    height: 620px;
+    margin: 0 auto;
+    background-color: $maincolor2;
+    position: relative;
+    &_line {
+        position: absolute;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 1692px;
+        left: 110px;
+        top: 293px;
+    }
+    &_title {
+        @include title();
+        padding-top: 105px;
+    }
+    &_main {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 56px;
+        &-item {
+            width: 264px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-text {
+                position: relative;
+                font-family: 'ProximaNova-bold';
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.02em;
+                text-align: center;
+                margin-top: 14px;
+                span {
+                    display: block;
+                    margin-top: 35px;
+                    text-align: center;
+                    font-family: 'ProximaNova-semibold';
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 38px;
+                    left: 118px;
+                    width: 28px;
+                    height: 4px;
+                    background-color: $maincolor4;
+                }
+            }
+        }
+    }
+}
+
+.call {
+    width: 1920px;
+    height: 318px;
+    margin: 0 auto;
+    position: relative;
+    background: $mainlinear;
+    color: $maincolor2;
+    &_title {
+        @include title();
+        padding-top: 79px;
+    }
+    &_text {
+        margin-top: 54px;
+        font-family: 'ProximaNova-regular';
+        font-size: 18px;
+        line-height: 30px;
+        width: 600px;
+    }
+    &_btn {
+        @include btn();
+        background: linear-gradient($maincolor4, $maincolor1);
+        box-shadow: none;
+        position: absolute;
+        top: 176px;
+        left: 730px;
+    }
+}
+
+.map {
+    background-image: url(../img/map.png);
+    width: 1920px;
+    height: 520px;
+    margin: 0 auto;
+    position: relative;
+    .office {
+        position: absolute;
+        margin-top: 104px;
+        width: 465px;
+        height: 201px;
+        color: $maincolor2;
+        background: $mainlinear;
+        &_title {
+            @include title();
+            margin: 33px 0 0 100px;
+        }
+        &_text {
+            margin-left: 42px;
+            font-family: 'ProximaNova-semibold';
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 0.02em;
+            span {
+                display: block;
+                margin-left: 22px;
+                position: relative;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    background-image: url(../img/metro.png);
+                    width: 10px;
+                    height: 9px;
+                    top: 12px;
+                    left: -22px;               
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 1920px;
+    height: 149px;
+    margin: 0 auto;
+    background: $mainlinear;
+}
