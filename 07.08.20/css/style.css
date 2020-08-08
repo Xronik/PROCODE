@@ -1,0 +1,53 @@
+.main {
+    width: 600px;
+    height: 200px;
+    margin: 100px auto 0;
+}
+
+.stopwatch {
+    display: flex;
+}
+
+.cell {
+	width: 0.60em;
+	height: 40px;
+	border: 1px solid #000;
+	font-size: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.numbers {
+	width: 0.6em;
+	line-height: 40px;
+    text-align: center;   	
+	position: absolute;
+	top: 0;
+    left: 0;
+    animation: move 1s steps(10, end) infinite;
+    animation-play-state: paused;
+}
+
+.second {animation:  move 10s steps(10, end) infinite;}
+.tensecond {animation: move6 60s steps(6, end) infinite;	animation-play-state: paused;} 
+.minute {animation: move 600s steps(10, end) infinite;	animation-play-state: paused;} 
+.tenminute {animation: move6 3600s steps(6, end) infinite;	animation-play-state: paused;} 
+
+.divider {
+    animation: none;
+}
+
+#stop:checked~.timer .numbers {animation-play-state: paused;}
+#start:active~.stopwatch .numbers {animation-play-state: running;}
+#reset:checked~.timer .numbers {animation: none;}
+
+@keyframes move {
+	0% {top: 0;}
+    100% {top: -400px;} 
+    
+}
+
+@keyframes move6 {
+    0% {top: 0;}
+	100% {top: -240px;} 
+}
