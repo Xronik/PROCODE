@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'fontello';
+    src: url(../fonts/fontello.woff2);
+}
+@font-face {
+    font-family: 'iconic';
+    src: url(../fonts/fontello2.woff);
+}
+
 .main {
     width: 600px;
     height: 200px;
@@ -6,12 +15,25 @@
 
 .stopwatch {
     display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 1px solid #000;
+    width: 215px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.spin {
+    font-family: 'fontello';
+    height: 40px;
+    font-size: 35px;
+    margin-left: 10px;
 }
 
 .cell {
 	width: 0.60em;
 	height: 40px;
-	border: 1px solid #000;
+    font-weight: bold;
 	font-size: 50px;
     overflow: hidden;
     position: relative;
@@ -25,10 +47,45 @@
 	top: 0;
     left: 0;
     animation: move 1s steps(10, end) infinite;
-    animation-play-state: paused;
 }
 
-.second {animation:  move 10s steps(10, end) infinite;}
+.btm-line {
+    display: flex;
+    justify-content: space-between;
+    width: 227px;
+}
+
+.time {
+    height: 25px;
+    width: 105px;
+    line-height: 25px;
+    font-size: 25px;
+    font-family: 'fontello';
+    border: 1px solid #000;
+}
+
+.btn {
+    font-family: 'iconic';
+    height: 27px;
+    width: 100px;
+    background-color: white;
+    border: 1px solid #000;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+/* #stop:checked~.timer .numbers {animation-play-state: paused;}
+16 */
+#start:hover ~ .stopwatch .second {animation-play-state: running;}
+/* 17
+#reset:checked~.timer .numbers {animation: none;} */
+
+.second {animation:  move 10s steps(10, end) infinite; animation-play-state: paused;}
 .tensecond {animation: move6 60s steps(6, end) infinite;	animation-play-state: paused;} 
 .minute {animation: move 600s steps(10, end) infinite;	animation-play-state: paused;} 
 .tenminute {animation: move6 3600s steps(6, end) infinite;	animation-play-state: paused;} 
