@@ -1,0 +1,27 @@
+.main {
+    width: 600px;
+    height: 600px;
+    background-image: url(../images/clock.png);
+    margin: 100px auto 0;
+    position: relative;
+}
+
+.arrow {
+    height: 250px;
+    width: 6px;
+    background-color: black;
+    position: relative;
+    top: 51px;
+    left: 297px;
+    animation: rotate 60s steps(60) infinite;
+    transform-origin: 50% 100%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
