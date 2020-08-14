@@ -46,7 +46,7 @@
 	position: absolute;
 	top: 0;
     left: 0;
-    animation: move 1s steps(10, end) infinite;
+    /* animation: move 1s steps(10, end) infinite; */
 }
 
 .btm-line {
@@ -81,7 +81,7 @@
 }
 /* #stop:checked~.timer .numbers {animation-play-state: paused;}
 16 */
-#start:hover ~ .stopwatch .second {animation-play-state: running;}
+/* #start:hover ~ .stopwatch .second {animation-play-state: running;} */
 /* 17
 #reset:checked~.timer .numbers {animation: none;} */
 

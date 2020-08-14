@@ -1,0 +1,63 @@
+.main {
+    margin: 0 auto;
+    width: 1000px;
+    height: 400px;
+    position: relative;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    background-color: tomato;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 50px auto 0;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:before {
+    content: '';
+    position: relative;
+    width: 120%;
+    height: 10px;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(235,235,235,0.6587009803921569) 49%, rgba(255,252,252,0) 100%);
+    top: -10px;
+    left: 0;
+    display: block;
+    transform: rotate(350deg);
+    transform-origin: 0% 100%;
+    transition: all 0.3s linear;
+}
+
+.btn:hover::before {
+    transform: translateY(100px) rotate(350deg);
+}
+
+.btn:active {
+    transform: translateX(3px) translateY(3px);
+}
+
+.journal {
+    width: 600px;
+    margin: 50px auto 0;
+    position: relative;
+    display: flex;
+}
+
+.article {
+    height: 250px;
+    width: 50px;
+    border: 1px black solid;
+    background-color: white;
+    cursor: pointer;
+    transition: width 1s linear;
+}
+
+.article:hover {
+    width: 200px;
+} 
+
+
