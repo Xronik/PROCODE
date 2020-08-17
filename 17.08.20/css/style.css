@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'GoogleSans-bold';
+    src: url(../fonts/GoogleSans-Bold.woff2);
+}
+
+.header {
+    height: 36px;
+    background: #F2F2F2;
+}
+
+.container {
+    width: 720px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header__wrap {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__item {
+    font-family: 'GoogleSans-bold';
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+    margin-left: 37px;
+}
