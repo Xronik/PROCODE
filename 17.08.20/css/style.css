@@ -51,7 +51,7 @@ html {
 
 .menu {
     height: 83px;
-    border: 1px solid #E8E8EE;
+    border-bottom: 1px solid #E8E8EE;
 }
 
 .menu__wrap {
