@@ -2,7 +2,8 @@
   margin: 0 auto;
   width: 1600px;
   height: 200px;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   padding: 200px 0 0 200px;
   font-family: sans-serif;
   font-weight: bold;
@@ -11,47 +12,63 @@
 .container {
   height: 210px;
   width: 150px;
-  transition: 0.6s linear;
-  transform-style: preserve-3d;
+  -webkit-transition: .6s linear;
+  transition: .6s linear;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   cursor: pointer;
   background-color: white;
   display: inline-block;
   border-radius: 5px;
   position: relative;
 }
+
 .container:nth-child(2) {
   left: -70px;
 }
+
 .container:nth-child(3) {
   left: -140px;
 }
+
 .container:nth-child(4) {
   left: -210px;
 }
+
 .container:nth-child(5) {
   left: -280px;
 }
+
 .container:nth-child(6) {
   left: -350px;
 }
+
 .container:nth-child(7) {
   left: -420px;
 }
+
 .container:nth-child(8) {
   left: -490px;
 }
+
 .container:nth-child(9) {
   left: -560px;
 }
+
 .container:nth-child(10) {
   left: -630px;
 }
+
 .container:hover {
-  transform: rotateY(180deg) translateY(-30%);
+  -webkit-transform: rotateY(180deg) translateY(-30%);
+          transform: rotateY(180deg) translateY(-30%);
   z-index: 5;
 }
+
 .container:hover .front {
-  box-shadow: 2px -2px 5px 1px #999898;
+  -webkit-box-shadow: 2px -2px 5px 1px #999898;
+          box-shadow: 2px -2px 5px 1px #999898;
+  -webkit-transition: 0.2s linear 0.4s;
   transition: 0.2s linear 0.4s;
 }
 
@@ -64,7 +81,8 @@
   border-radius: 5px;
   background-color: white;
   position: absolute;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .back__inner {
@@ -77,11 +95,13 @@
 
 .back {
   z-index: 2;
-  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
 
 .front {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .front__mark-top {
@@ -94,6 +114,7 @@
   left: 7px;
   top: 5px;
 }
+
 .front__mark-bot {
   position: absolute;
   height: 45px;
@@ -103,13 +124,16 @@
   text-align: center;
   right: 7px;
   bottom: 5px;
-  transform: rotateX(180deg) rotateY(180deg);
+  -webkit-transform: rotateX(180deg) rotateY(180deg);
+          transform: rotateX(180deg) rotateY(180deg);
 }
+
 .front__mark-title {
   font-size: 20px;
   text-align: center;
   margin: 95px auto 0;
 }
+
 .front__mark-bot-joker {
   position: absolute;
   height: 45px;
@@ -135,5 +159,4 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 /*# sourceMappingURL=style.css.map */

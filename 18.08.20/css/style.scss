@@ -1,0 +1,23 @@
+$blck-w: 72px;
+$blck-h: 72px;
+$blck-color: #808080;
+
+body {
+    background-color: black;
+}
+
+.main {
+    width: 330px;
+    height: 250px;
+    margin: 200px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    &__blocks {
+        width: $blck-w;
+        height: $blck-h;
+        background-color: $blck-color;
+    }
+}
