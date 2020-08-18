@@ -339,9 +339,9 @@ html {
     }
 }
 
-@media (min-width:1181px) {
+@media (min-width:1203px) {
     .container {
         margin: 0 auto;
-        width: 1181px;
+        width: 1180px;
     }
 }
