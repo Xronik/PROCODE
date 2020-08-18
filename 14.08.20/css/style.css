@@ -54,10 +54,23 @@
     background-color: white;
     cursor: pointer;
     transition: width 1s linear;
+    display: flex;
+    overflow: hidden;
 }
 
 .article:hover {
-    width: 200px;
+    width: 250px;
 } 
+
+.article__root {
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.article__main {
+    width: 150px;
+    margin-left: 20px;
+}
 
 
