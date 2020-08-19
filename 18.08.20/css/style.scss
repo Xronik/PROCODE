@@ -1,23 +1,16 @@
-$blck-w: 72px;
-$blck-h: 72px;
-$blck-color: #808080;
-
-body {
-    background-color: black;
-}
+$block-w: 80px;
+$block-h: 80px;
+$block-color: #808080;
+$column-numbers: 10;
+$raw-numbers: 4;
 
 .main {
-    width: 330px;
-    height: 250px;
-    margin: 200px auto 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    &__blocks {
-        width: $blck-w;
-        height: $blck-h;
-        background-color: $blck-color;
-    }
+    width: calc(#{$block-w} * #{$column-numbers});
+    height: calc(#{$block-h} * #{$raw-numbers});
+    background:
+    repeating-linear-gradient(to right,
+        transparent 0 calc(#{$block-w} - 2px),#fff calc(#{$block-w} - 2px) $block-w),   
+    repeating-linear-gradient(to bottom,
+        transparent 0 calc(#{$block-h} - 2px),#fff calc(#{$block-h} - 2px) $block-h) red;
 }
+
