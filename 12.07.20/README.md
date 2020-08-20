@@ -31,4 +31,4 @@
 
 ## Ссылка на страничку:
 
-[Николай коперник - краткая биография](https://xronik.github.io/PROCODE/12.07.20(homework)/index.html)
+[Николай коперник - краткая биография](https://xronik.github.io/PROCODE/12.07.20/index.html)

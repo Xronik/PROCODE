@@ -23,4 +23,4 @@
 
 ## Ссылка на страничку:
 
-[Кнопки](https://xronik.github.io/PROCODE/16.07.20(hw)/index.html)
+[Кнопки](https://xronik.github.io/PROCODE/16.07.20/index.html)
