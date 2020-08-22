@@ -1,0 +1,166 @@
+.main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    padding-bottom: 50px;
+    grid-template-columns: 3fr 3fr 2fr 4fr;
+    grid-template-rows: 70px repeat(2, minmax(max-content, auto)) 70px 70px 2fr;
+    grid-template-areas: 
+        "logo logo logo about"
+        "side article article article"
+        "side article article article"
+        "side flowers flowers flowers"
+        "onerow onerow onerow onerow"
+        "articlebot articlebot articlebot articlebot"
+    ;
+    .logo {
+        grid-area: logo;
+        width: 100%;
+        height: 100%;
+        justify-self: start;
+        align-self: center;
+        background: url(../img/header-img-PRO.png) 10% center no-repeat, black;
+        background-size: 120px, auto;
+    }
+    .about {
+        height: 100%;
+        grid-area: about;
+        display: grid;
+        grid-template-columns: 33% 1fr 33%;
+        align-self: center;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        &__text {
+            align-self: center;
+        }
+        &__scss {
+            grid-column-start: 3;
+            justify-self: end;
+            text-decoration: none;
+            color: white;
+            align-self: center;
+        }
+    }
+    .side {
+        grid-area: side;
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(5, minmax(25%, max-content));
+        grid-template-areas: 
+        "side1  ."
+        "side1 side2"
+        "side3 side2"
+        "side3 side4"
+        ". side4";
+        &__lorem1 {
+            grid-area: side1;
+            overflow: hidden;
+        }
+        &__lorem2 {
+            grid-area: side2;
+            overflow: hidden;
+        }
+        &__lorem3 {
+            grid-area: side3;
+            overflow: hidden;
+        }
+        &__lorem4 {
+            grid-area: side4;
+            overflow: hidden;
+        }
+    }
+    .article {
+        grid-area: article;
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 5fr 2fr 5fr;        
+        &__lorem1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        &__lorem2 {
+            grid-area: 2/2/3/4;
+        }
+
+        // .img {
+        //     width: 80px;
+        // height: 80px;
+        // border-radius: 50% 50%;
+        // }
+    }
+    .flowers {
+        grid-area: flowers;
+        background-image: url(../img/3984185.jpg);
+        background-size: contain;
+    }
+    .onerow {
+        grid-area: onerow;
+        overflow: auto;
+        display: grid;
+    }
+    .articlebot {
+        grid-area: articlebot;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .hills {
+        position: fixed;
+        background: url(../img/nature-landscape-background.jpg);
+        height: 50px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-position: center;
+    }
+}
+
+.main * {
+    border: 1px solid black;
+}
+
+@media (max-width:400px) {
+    .main {
+        grid-template-columns: 5fr 7fr;
+        grid-template-rows: 40px 40px 2fr 70px 1fr;
+        grid-template-areas: 
+            "logo logo"
+            "about about"
+            "side article"
+            "side flowers"
+            "articlebot articlebot"
+        ;
+        .logo {
+            background: url(../img/header-img-PRO.png) center no-repeat, black;
+            background-size: 80px, auto;
+        }
+        .side {
+            grid-template-areas: 
+            ". side1"
+            "side2 side1"
+            "side2 side3"
+            "side4 side3"
+            "side4 .";
+        }
+        .article {
+            grid-template-columns: 1fr;
+            grid-template-rows: 50% 50%;
+            &__lorem1 {
+                grid-row-start: 1;                
+            }
+            &__lorem2 {
+                grid-area: 2/2/2/2;
+            }
+        }
+        .onerow {
+            display: none;
+        }
+        .articlebot {
+            grid-template-columns: 1fr;
+            grid-template-rows: 50% 50%;
+        }
+    }
+
+}

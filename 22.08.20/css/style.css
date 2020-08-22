@@ -1,0 +1,227 @@
+.main {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  padding-bottom: 50px;
+  -ms-grid-columns: 3fr 3fr 2fr 4fr;
+      grid-template-columns: 3fr 3fr 2fr 4fr;
+  -ms-grid-rows: 70px (minmax(max-content, auto))[2] 70px 70px 2fr;
+      grid-template-rows: 70px repeat(2, minmax(-webkit-max-content, auto)) 70px 70px 2fr;
+      grid-template-rows: 70px repeat(2, minmax(max-content, auto)) 70px 70px 2fr;
+      grid-template-areas: "logo logo logo about" "side article article article" "side article article article" "side flowers flowers flowers" "onerow onerow onerow onerow" "articlebot articlebot articlebot articlebot";
+}
+
+.main .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: logo;
+  width: 100%;
+  height: 100%;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: url(../img/header-img-PRO.png) 10% center no-repeat, black;
+  background-size: 120px, auto;
+}
+
+.main .about {
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: about;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 1fr 33%;
+      grid-template-columns: 33% 1fr 33%;
+  -ms-grid-row-align: center;
+      align-self: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main .about__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main .about__scss {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  text-decoration: none;
+  color: white;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main .side {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: side;
+  overflow: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: (minmax(25%, max-content))[5];
+      grid-template-rows: repeat(5, minmax(25%, -webkit-max-content));
+      grid-template-rows: repeat(5, minmax(25%, max-content));
+      grid-template-areas: "side1  ." "side1 side2" "side3 side2" "side3 side4" ". side4";
+}
+
+.main .side__lorem1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: side1;
+  overflow: hidden;
+}
+
+.main .side__lorem2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: side2;
+  overflow: hidden;
+}
+
+.main .side__lorem3 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: side3;
+  overflow: hidden;
+}
+
+.main .side__lorem4 {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: side4;
+  overflow: hidden;
+}
+
+.main .article {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: article;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  -ms-grid-columns: 5fr 2fr 5fr;
+      grid-template-columns: 5fr 2fr 5fr;
+}
+
+.main .article__lorem1 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.main .article__lorem2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 2/2/3/4;
+}
+
+.main .flowers {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: flowers;
+  background-image: url(../img/3984185.jpg);
+  background-size: contain;
+}
+
+.main .onerow {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: onerow;
+  overflow: auto;
+  display: -ms-grid;
+  display: grid;
+}
+
+.main .articlebot {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: articlebot;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.main .hills {
+  position: fixed;
+  background: url(../img/nature-landscape-background.jpg);
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-position: center;
+}
+
+.main * {
+  border: 1px solid black;
+}
+
+@media (max-width: 400px) {
+  .main {
+    -ms-grid-columns: 5fr 7fr;
+        grid-template-columns: 5fr 7fr;
+    -ms-grid-rows: 40px 40px 2fr 70px 1fr;
+        grid-template-rows: 40px 40px 2fr 70px 1fr;
+        grid-template-areas: "logo logo" "about about" "side article" "side flowers" "articlebot articlebot";
+  }
+  .main .logo {
+    background: url(../img/header-img-PRO.png) center no-repeat, black;
+    background-size: 80px, auto;
+  }
+  .main .side {
+        grid-template-areas: ". side1" "side2 side1" "side2 side3" "side4 side3" "side4 .";
+  }
+  .main .article {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+  }
+  .main .article__lorem1 {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+  }
+  .main .article__lorem2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: 2/2/2/2;
+  }
+  .main .onerow {
+    display: none;
+  }
+  .main .articlebot {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
