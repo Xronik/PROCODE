@@ -4,7 +4,7 @@
     display: grid;
     padding-bottom: 50px;
     grid-template-columns: 3fr 3fr 2fr 4fr;
-    grid-template-rows: 70px repeat(2, minmax(max-content, auto)) 70px 70px 2fr;
+    grid-template-rows: 70px repeat(2, 2fr) 70px 70px 2fr;
     grid-template-areas: 
         "logo logo logo about"
         "side article article article"
@@ -57,39 +57,41 @@
         ". side4";
         &__lorem1 {
             grid-area: side1;
-            overflow: hidden;
         }
         &__lorem2 {
             grid-area: side2;
-            overflow: hidden;
         }
         &__lorem3 {
             grid-area: side3;
-            overflow: hidden;
         }
         &__lorem4 {
             grid-area: side4;
-            overflow: hidden;
         }
     }
     .article {
         grid-area: article;
         display: grid;
         grid-template-rows: 50% 50%;
-        grid-template-columns: 5fr 2fr 5fr;        
-        &__lorem1 {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-        &__lorem2 {
-            grid-area: 2/2/3/4;
-        }
+        grid-template-columns: 5fr 2fr 5fr;
+        &__lorem{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &:nth-child(1) {
+                grid-column-start: 1;
+                grid-column-end: 3;
 
-        // .img {
-        //     width: 80px;
-        // height: 80px;
-        // border-radius: 50% 50%;
-        // }
+            }
+            &:nth-child(2) {
+                grid-area: 2/2/2/4;
+            }    
+            &-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50% 50%;
+                margin: 0 15px;
+            }
+        }        
     }
     .flowers {
         grid-area: flowers;
@@ -115,10 +117,6 @@
         left: 0;
         background-position: center;
     }
-}
-
-.main * {
-    border: 1px solid black;
 }
 
 @media (max-width:400px) {
@@ -147,12 +145,16 @@
         .article {
             grid-template-columns: 1fr;
             grid-template-rows: 50% 50%;
-            &__lorem1 {
-                grid-row-start: 1;                
+            &__lorem {
+                &:nth-child(1) {
+                    grid-column-start: 1;
+                    grid-column-end: 1;
+                }
+                &:nth-child(2) {
+                    grid-area: 2/1/2/1;
+                } 
             }
-            &__lorem2 {
-                grid-area: 2/2/2/2;
-            }
+
         }
         .onerow {
             display: none;
@@ -160,6 +162,7 @@
         .articlebot {
             grid-template-columns: 1fr;
             grid-template-rows: 50% 50%;
+
         }
     }
 

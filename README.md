@@ -15,4 +15,4 @@
 * ```14.08.20```  [Создаем кнопку с бликом и развертывание статей](https://xronik.github.io/PROCODE/14.08.20/index.html)
 * ```17.08.20```  [Создаем страничку с адаптивной версткой](https://xronik.github.io/PROCODE/17.08.20/index.html)
 * ```18.08.20```  [Создаем кубики с использованием возможностей SCSS](https://xronik.github.io/PROCODE/18.08.20/index.html)
-
+* ```22.08.20```  [Адаптивная страница с помощью Grid Layout](https://xronik.github.io/PROCODE/22.08.20/index.html)
