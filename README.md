@@ -10,7 +10,7 @@
 * ```26.07.20```  [Создаем простенький сайт с отчетом времени](https://xronik.github.io/PROCODE/26.07.20/index.html)
 * ```01.08.20```  [Верстаем полноценный сайт (1)](https://xronik.github.io/PROCODE/01.08.20/app/index.html)
 * ```07.08.20```  [Создаем секундомер](https://xronik.github.io/PROCODE/07.08.20/index.html)
-* ```08.08.20```  [Создаем анимацию](https://xronik.github.io/PROCODE/08.08.20/index.html)
+* ```08.08.20```  [Создаем анимацию прыгающего шарика](https://xronik.github.io/PROCODE/08.08.20/index.html)
 * ```11.08.20```  [Создаем анимацию часов](https://xronik.github.io/PROCODE/11.08.20/index.html)
 * ```14.08.20```  [Создаем кнопку с бликом и развертывание статей](https://xronik.github.io/PROCODE/14.08.20/index.html)
 * ```17.08.20```  [Создаем страничку с адаптивной версткой](https://xronik.github.io/PROCODE/17.08.20/index.html)
