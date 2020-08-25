@@ -1,14 +1,13 @@
 .main {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
-  padding-bottom: 50px;
   -ms-grid-columns: 3fr 3fr 2fr 4fr;
       grid-template-columns: 3fr 3fr 2fr 4fr;
-  -ms-grid-rows: 70px (2fr)[2] 70px 70px 2fr;
-      grid-template-rows: 70px repeat(2, 2fr) 70px 70px 2fr;
-      grid-template-areas: "logo logo logo about" "side article article article" "side article article article" "side flowers flowers flowers" "onerow onerow onerow onerow" "articlebot articlebot articlebot articlebot";
+  -ms-grid-rows: 70px (2fr)[2] 70px 70px 2fr 70px;
+      grid-template-rows: 70px repeat(2, 2fr) 70px 70px 2fr 70px;
+      grid-template-areas: "logo logo logo about" "side article article article" "side article article article" "side flowers flowers flowers" "onerow onerow onerow onerow" "articlebot articlebot articlebot articlebot" "hills hills hills hills";
 }
 
 .main .logo {
@@ -184,12 +183,11 @@
 }
 
 .main .hills {
-  position: fixed;
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: hills;
   background: url(../img/nature-landscape-background.jpg);
-  height: 50px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
   background-position: center;
 }
 
@@ -197,9 +195,9 @@
   .main {
     -ms-grid-columns: 5fr 7fr;
         grid-template-columns: 5fr 7fr;
-    -ms-grid-rows: 40px 40px 2fr 70px 1fr;
-        grid-template-rows: 40px 40px 2fr 70px 1fr;
-        grid-template-areas: "logo logo" "about about" "side article" "side flowers" "articlebot articlebot";
+    -ms-grid-rows: 40px 40px 2fr 70px 1fr 70px;
+        grid-template-rows: 40px 40px 2fr 70px 1fr 70px;
+        grid-template-areas: "logo logo" "about about" "side article" "side flowers" "articlebot articlebot" "hills hills";
   }
   .main .logo {
     background: url(../img/header-img-PRO.png) center no-repeat, black;
