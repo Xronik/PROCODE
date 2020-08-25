@@ -7,6 +7,14 @@
     src: url(../fonts/fontello2.woff);
 }
 
+.timer {
+    width: 160px;
+	height: 45px;
+    font-weight: bold;
+	font-size: 45px;
+    position: relative;
+}
+
 .main {
     width: 600px;
     height: 200px;
@@ -24,13 +32,21 @@
 }
 
 .spin {
-    font-family: 'fontello';
+    /* font-family: 'fontello'; */
     height: 40px;
     font-size: 35px;
-    margin-left: 10px;
+    line-height: 40px;
+    animation: spin 3s infinite linear;
+    animation-play-state: paused;
 }
 
-.cell {
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }  
+}
+
+/* .cell {
 	width: 0.60em;
 	height: 40px;
     font-weight: bold;
@@ -46,8 +62,8 @@
 	position: absolute;
 	top: 0;
     left: 0;
-    /* animation: move 1s steps(10, end) infinite; */
-}
+    animation: move 1s steps(10, end) infinite;
+} */
 
 .btm-line {
     display: flex;
@@ -65,36 +81,37 @@
 }
 
 .btn {
-    font-family: 'iconic';
+    /* font-family: 'iconic'; */
     height: 27px;
     width: 100px;
     background-color: white;
     border: 1px solid #000;
+    cursor: pointer;
 }
 
-.btn:active {
+/* .btn:active {
     transform: translateY(2px);
 }
 
 .btn:hover {
     cursor: pointer;
-}
+} */
 /* #stop:checked~.timer .numbers {animation-play-state: paused;}
 16 */
 /* #start:hover ~ .stopwatch .second {animation-play-state: running;} */
 /* 17
 #reset:checked~.timer .numbers {animation: none;} */
 
-.second {animation:  move 10s steps(10, end) infinite; animation-play-state: paused;}
-.tensecond {animation: move6 60s steps(6, end) infinite;	animation-play-state: paused;} 
-.minute {animation: move 600s steps(10, end) infinite;	animation-play-state: paused;} 
-.tenminute {animation: move6 3600s steps(6, end) infinite;	animation-play-state: paused;} 
+/* .second {animation:  move 10s steps(10, end) infinite; }
+.tensecond {animation: move6 60s steps(6, end) infinite;} 
+.minute {animation: move 600s steps(10, end) infinite;	} 
+.tenminute {animation: move6 3600s steps(6, end) infinite;} 
 
-.divider {
+/* .divider {
     animation: none;
-}
+} */
 
-#stop:checked~.timer .numbers {animation-play-state: paused;}
+/* #stop:checked~.timer .numbers {animation-play-state: paused;}
 #start:active~.stopwatch .numbers {animation-play-state: running;}
 #reset:checked~.timer .numbers {animation: none;}
 
@@ -107,4 +124,4 @@
 @keyframes move6 {
     0% {top: 0;}
 	100% {top: -240px;} 
-}
+} */
