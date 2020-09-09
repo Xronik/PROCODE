@@ -1,14 +1,20 @@
 let cameraTemp = -5;
 
 let purchaseInvoice = {
-    milk: {
-        condition: 'pasteurized',
-        boxes: 3,
-        packagesInBox: 20,
-        packages: 'polyethylene',
-        expirationDate: 7,
-        dateOfManufacture: 3,
-        storageTemperature: 6,
+    milkBoxes: {
+        number: 3,
+        packagesInBox: {
+            number: 20,
+            condition: 'pasteurized',
+            packages: 'polyethylene',
+            expirationDate: 7,
+            dateOfManufacture: 3,
+            storageTemperature: 6,
+        }
+
+        // boxes: 3,
+        // packagesInBox: 20,
+
     },
     butter: {
         boxes: 4,
@@ -34,22 +40,23 @@ let purchaseInvoice = {
         dateOfManufacture: 3,
         storageTemperature: -25,
     },
+
 }
 
-let returnInvoice = {
-    milk: {
-        packageNmbr: 0
-    },
-    butter: {
-        packageNmbr: 0
-    },
-    kefir: {
-        packageNmbr: 0
-    },
-    icecream: {
-        packageNmbr: 0
-    },
-}
+// let returnInvoice = {
+//     milk: {
+//         packageNmbr: 0
+//     },
+//     butter: {
+//         packageNmbr: 0
+//     },
+//     kefir: {
+//         packageNmbr: 0
+//     },
+//     icecream: {
+//         packageNmbr: 0
+//     },
+// }
 
 for (let key in purchaseInvoice) {
     console.log(purchaseInvoice[key].boxes);
