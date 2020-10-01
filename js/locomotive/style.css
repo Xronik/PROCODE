@@ -1,0 +1,38 @@
+.locomotive {
+    width: 140px;
+    height: 100px;
+    margin: 100px auto 0;
+    background: center no-repeat url(img/locomotive.png);
+    background-size: 100%;
+}
+.btn_wrapp {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 50px auto;
+}
+.btn {
+    width: 70px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:nth-child(2) {
+    font-size: 18px;
+    width: 100px;
+}
+.light {
+    background: cover 100% url(img/locomotive.png), left yellow;
+}
+.btn:active {
+    transform: translateY(5px);
+}
+.blue {
+    background-color: blue;
+}
+/* .move {
+    transform: translateX(0);
+} */
