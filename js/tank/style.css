@@ -1,0 +1,53 @@
+.tank {
+  width: 140px;
+  height: 100px;
+  margin: 100px auto 0;
+  background: center no-repeat url(img/tank_left.png);
+  background-size: 100%;
+  position: relative;
+
+  /* transform-origin: 50%, 50%; */
+}
+.btn_wrapp {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 50px auto;
+}
+.btn {
+  width: 70px;
+  height: 30px;
+  font-size: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:nth-child(2) {
+  font-size: 18px;
+  width: 100px;
+}
+.fire {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  left: 0;
+  top: 40px;
+  position: absolute;
+  background-color: yellow;
+  display: none;
+}
+/* .light_on {
+  display: block;
+} */
+.btn:active {
+  transform: translateY(5px);
+}
+.blue {
+  background-color: blue;
+}
+
+.tank_right {
+  background: center no-repeat url(img/tank_right.png);
+  background-size: 100%;
+}
