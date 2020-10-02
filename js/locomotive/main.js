@@ -1,25 +1,28 @@
 let btn = document.querySelectorAll(".btn");
-let move = document.querySelector(".move");
 let locomotive = document.querySelector(".locomotive");
+let light = document.querySelector(".light");
 let newPosition = null;
 let moveLeft = () => {
-  newPosition--;
+  newPosition -= 5;
   locomotive.style.transform = `translateX(${newPosition}px)`;
 };
 let moveRight = () => {
-  newPosition++;
+  newPosition += 5;
   locomotive.style.transform = `translateX(${newPosition}px)`;
 };
-let light = () => {};
+let lightChange = () => {
+  light.classList.toggle("light_on");
+  btn[1].innerHTML === "Light off"
+    ? (btn[1].innerHTML = "Light on")
+    : (btn[1].innerHTML = "Light off");
+};
+
 btn[0].addEventListener("mousedown", moveLeft);
+btn[1].addEventListener("mousedown", lightChange);
 btn[2].addEventListener("mousedown", moveRight);
-document.addEventListener("keyup", (e) => {
-  console.log(e.code);
+
+document.addEventListener("keydown", (e) => {
   e.code == "ArrowLeft" ? moveLeft() : true;
   e.code == "ArrowRight" ? moveRight() : true;
+  e.code == "Space" ? lightChange() : true;
 });
-
-// document.addEventListener('keydown', (e)=>{
-//     newPosition++;
-//     locomotive.style.transform = `translateX(${newPosition}px)`;
-// })
