@@ -5,9 +5,6 @@ let spin = document.querySelector('.spin');
 let timer = document.querySelector('.timer');
 let input = document.querySelector('.time')
 
-let testHours = document.getElementById('hours')
-let testMinutes = document.getElementById('minutes')
-
 function changeTimer() {
     let seconds = counter % 60;
     let minutes = Math.floor(counter / 60);
@@ -22,19 +19,19 @@ function changeTimer() {
 }
 
 function run() {
-    // let inputHours = Number(input.value.slice(0, 2))
-    // let inputMinutes = Number(input.value.slice(-2))
-    let inputHours = Number(testHours.value)
-    let inputMinutes = Number(testMinutes.value)
+    let inputHours = Number(input.value.slice(0, 2))
+    let inputMinutes = Number(input.value.slice(-2))
     let todayDate = new Date()
     let timerHours = inputHours - todayDate.getHours()
     let timerMinutes = inputMinutes - todayDate.getMinutes()
     counter = (timerHours * 60 + timerMinutes - 1) * 60 + todayDate.getSeconds()
+
     const interval = setInterval(function () {
         counter--;
         if (counter <= 0) {
             timer.classList.toggle('time-out')
             counter = 0
+            spin.style.animationPlayState = 'paused'
         }
         changeTimer();
         if (state == 'stopped') {

@@ -25,10 +25,11 @@
 
 .stopwatch {
     display: flex;
+    justify-content: center;
     margin-bottom: 10px;
     align-items: center;
     border: 1px solid #000;
-    width: 215px;
+    width: 275px;
     height: 50px;
     padding-left: 10px;
 }
@@ -50,12 +51,12 @@
 .btm-line {
     display: flex;
     justify-content: space-between;
-    width: 227px;
+    width: 284px;
 }
 
 .time {
     height: 25px;
-    width: 105px;
+    width: 160px;
     line-height: 25px;
     font-size: 25px;
     font-family: 'fontello';
@@ -72,9 +73,4 @@
 
 .time-out {
     opacity: 0;
-}
-
-#hours, #minutes {
-    width: 40px;
-    height: 22px;
 }
