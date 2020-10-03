@@ -243,19 +243,24 @@
 // div[0].addEventListener('click', colorChange)
 
 
-let divNumber = (number) => {
-    let fullStr = ''
-    for (i = 0; i < number; i++) {
-        fullStr += '<div class="rectangle"></div>'
-    }
-    return fullStr
-}
-document.body.innerHTML = divNumber(10)
-let div = document.querySelectorAll('.rectangle')
-let colorChange = () => {
-    for (i = 0; i < div.length; i++) {
-        div[i].classList.toggle('red')
-    }
-}
-div[0].addEventListener('mousedown', colorChange)
-div[0].addEventListener('mouseup', colorChange)
+// let divNumber = (number) => {
+//     let fullStr = ''
+//     for (i = 0; i < number; i++) {
+//         fullStr += '<div class="rectangle"></div>'
+//     }
+//     return fullStr
+// }
+// document.body.innerHTML = divNumber(10)
+// let div = document.querySelectorAll('.rectangle')
+// let colorChange = () => {
+//     for (i = 0; i < div.length; i++) {
+//         div[i].classList.toggle('red')
+//     }
+// }
+// div[0].addEventListener('mousedown', colorChange)
+// div[0].addEventListener('mouseup', colorChange)
+
+let today = new Date()
+let birthday = new Date(1988, 0, 7)
+let days = (today - birthday) / (1000 * 60 * 60 * 24)
+console.log(days);
