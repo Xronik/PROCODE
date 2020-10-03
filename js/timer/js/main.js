@@ -5,6 +5,9 @@ let spin = document.querySelector('.spin');
 let timer = document.querySelector('.timer');
 let input = document.querySelector('.time')
 
+let testHours = document.getElementById('hours')
+let testMinutes = document.getElementById('minutes')
+
 function changeTimer() {
     let seconds = counter % 60;
     let minutes = Math.floor(counter / 60);
@@ -19,8 +22,10 @@ function changeTimer() {
 }
 
 function run() {
-    let inputHours = Number(input.value.slice(0, 2))
-    let inputMinutes = Number(input.value.slice(-2))
+    // let inputHours = Number(input.value.slice(0, 2))
+    // let inputMinutes = Number(input.value.slice(-2))
+    let inputHours = Number(testHours.value)
+    let inputMinutes = Number(testMinutes.value)
     let todayDate = new Date()
     let timerHours = inputHours - todayDate.getHours()
     let timerMinutes = inputMinutes - todayDate.getMinutes()
