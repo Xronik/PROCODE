@@ -44,12 +44,6 @@
 .btn:active {
   transform: translateY(5px);
 }
-.blue {
-  background-color: blue;
-}
-.pause {
-  animation-play-state: paused;
-}
 .reverse {
-  transform: scale(-1,1);
+  transform: scale(-1, 1);
 }

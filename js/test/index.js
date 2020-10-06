@@ -1,4 +1,3 @@
-
 // for (let i = 0; i < 12; i++) {
 //     document.querySelector('.zodiacs').innerHTML += `&#${9800 + i}`;
 // }
@@ -65,7 +64,6 @@
 // console.log(lanos)
 // console.log(ford)
 
-
 // let arr = [2, 4, 6, 8, 10, 12];
 
 // let out = [];
@@ -84,9 +82,7 @@
 // console.log(out3);
 // };
 
-
 // console.log(out4);
-
 
 // let nmbr = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // let newNmbr = [];
@@ -109,8 +105,6 @@
 // };
 
 // console.table(arr2);
-
-
 
 // let firstPlayer = 100;
 // let secondPlayer = 100;
@@ -141,7 +135,6 @@
 
 // btn.addEventListener('click', btnFunc);
 
-
 // let a = '12'
 // let b = '123'
 // let c = '12'
@@ -155,7 +148,6 @@
 //     }
 // }
 // console.log(d);
-
 
 // let man = {
 //     name: 'Andrii',
@@ -200,7 +192,6 @@
 // console.log(pos2);
 // let str = ''
 
-
 // let str = (number) => {
 //     let fullStr = ''
 //     for (i = 0; i < number; i++) {
@@ -242,7 +233,6 @@
 // }
 // div[0].addEventListener('click', colorChange)
 
-
 // let divNumber = (number) => {
 //     let fullStr = ''
 //     for (i = 0; i < number; i++) {
@@ -260,7 +250,7 @@
 // div[0].addEventListener('mousedown', colorChange)
 // div[0].addEventListener('mouseup', colorChange)
 
-let today = new Date()
-let birthday = new Date(1988, 0, 7)
-let days = (today - birthday) / (1000 * 60 * 60 * 24)
-console.log(days);
+// let today = new Date()
+// let birthday = new Date(1988, 0, 7)
+// let days = (today - birthday) / (1000 * 60 * 60 * 24)
+// console.log(days);

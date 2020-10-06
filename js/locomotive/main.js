@@ -1,18 +1,19 @@
 let btn = document.querySelectorAll(".btn");
 let locomotive = document.querySelector(".locomotive");
 let light = document.querySelector(".light");
-let width = document.body.clientWidth / 2 - 70
-let position = ''
-let duration = null
-console.log(locomotive.style.transitionDuration)
+let width = document.body.clientWidth / 2 - 70;
+let position = "";
+let duration = null;
+console.log(locomotive.style.transitionDuration);
 let moveLeft = () => {
-  locomotive.style.left = `-${width}px`
-  locomotive.classList.remove('reverse')
+  locomotive.style.left = `-${width}px`;
+  locomotive.classList.remove("reverse");
+  speedStability();
 };
 let moveRight = () => {
-  locomotive.style.left = `${width}px`
-  locomotive.classList.add('reverse')
-
+  locomotive.style.left = `${width}px`;
+  locomotive.classList.add("reverse");
+  speedStability();
 };
 let lightChange = () => {
   light.classList.toggle("light_on");
@@ -20,18 +21,17 @@ let lightChange = () => {
     ? (btn[1].innerHTML = "Light on")
     : (btn[1].innerHTML = "Light off");
 };
+let speedStability = () => {
+  locomotive.classList.contains("reverse")
+    ? (duration = (10 * Math.abs(width - parseInt(position, 10))) / width)
+    : (duration = (10 * Math.abs(width + parseInt(position, 10))) / width);
+  duration == 0 ? (duration = 20) : true;
+  locomotive.style.transitionDuration = `${duration}s`;
+};
 let pause = () => {
-
-  position = window.getComputedStyle(locomotive, null).getPropertyValue("left")
-  locomotive.style.left = `${position}`
-  // duration = 10
-  duration = 10 * (1 - Math.abs(parseInt(position, 10) / document.body.clientWidth))
-  locomotive.style.transitionDuration = `${duration}s`
-  console.log(parseInt(position, 10))
-  console.log(document.body.clientWidth)
-  console.log(duration)
-  console.log(locomotive.style.transitionDuration)
-}
+  position = window.getComputedStyle(locomotive, null).getPropertyValue("left");
+  locomotive.style.left = `${position}`;
+};
 btn[0].addEventListener("mousedown", moveLeft);
 btn[0].addEventListener("mouseup", pause);
 btn[1].addEventListener("mousedown", lightChange);

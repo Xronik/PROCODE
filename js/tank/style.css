@@ -1,3 +1,7 @@
+.container {
+  overflow: hidden;
+}
+
 .tank {
   width: 140px;
   height: 100px;
@@ -5,8 +9,9 @@
   background: center no-repeat url(img/tank_left.png);
   background-size: 100%;
   position: relative;
-
-  /* transform-origin: 50%, 50%; */
+  transition: left linear;
+  transition-duration: 10s;
+  left: 0;
 }
 .btn_wrapp {
   display: flex;
@@ -31,23 +36,25 @@
   width: 17px;
   height: 17px;
   border-radius: 50%;
-  left: 0;
-  top: 40px;
+  left: -10px;
+  top: 20px;
   position: absolute;
-  background-color: yellow;
   display: none;
+  background-color: rgb(255, 0, 0);
+  animation: fire 0.3s linear paused;
 }
-/* .light_on {
-  display: block;
-} */
 .btn:active {
   transform: translateY(5px);
 }
-.blue {
-  background-color: blue;
+.reverse {
+  transform: scale(-1, 1);
 }
 
-.tank_right {
-  background: center no-repeat url(img/tank_right.png);
-  background-size: 100%;
+@keyframes fire {
+  0% {
+    left: -10px;
+  }
+  100% {
+    left: -100vw;
+  }
 }
