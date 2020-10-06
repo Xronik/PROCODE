@@ -254,3 +254,41 @@
 // let birthday = new Date(1988, 0, 7)
 // let days = (today - birthday) / (1000 * 60 * 60 * 24)
 // console.log(days);
+
+let array = [5, 23, -110, 3, 18, 0, 14];
+array.forEach((elem) => (elem % 2 ? console.log(elem) : true)); /// a
+console.log(array.map((elem) => elem + 20)); /// b
+console.log(array.filter((elem) => elem > 0)); /// c
+console.log(
+  array.reduce((sum, elem) => {
+    return Math.abs(elem % 3) + sum;
+  }, 0)
+); /// d
+console.log(array.some((elem) => elem === 5)); //// e
+console.log(array.slice(1)); //// f
+console.log(array.sort((a, b) => a - b)); /// g
+
+let str = "new-array new-string new-task new-job new-life";
+console.log(str.replace(/-\w/gi, (x) => x[1].toUpperCase()));
+
+// const btnStart = document.querySelector(".btn_start");
+// const main = document.querySelector(".main");
+// const btnStop = document.querySelector(".btn_stop");
+// let a = 0;
+// let timerId = null;
+// let timer = () =>
+//   (timerId = setInterval(() => {
+//     a = a + 2;
+//     console.log(a);
+//   }, 2000));
+// timer();
+// setTimeout(() => {
+//   btnStop.style.display = "block";
+// }, 5000);
+
+// btnStop.addEventListener("click", () => {
+//   clearInterval(timerId);
+// });
+// btnStart.addEventListener("click", () => {
+//   timer();
+// });
