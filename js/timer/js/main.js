@@ -23,11 +23,15 @@ function changeTimer() {
 }
 
 function run() {
-  let inputHours = Number(input.value.slice(0, 2));
-  let inputMinutes = Number(input.value.slice(-2));
   let todayDate = new Date();
-  let timerHours = inputHours - todayDate.getHours();
+  let inputMinutes = Number(input.value.slice(-2));
+  let inputHours = Number(input.value.slice(0, 2));
   let timerMinutes = inputMinutes - todayDate.getMinutes();
+  let timerHours = null;
+  inputHours <= todayDate.getHours()
+    ? (timerHours = 24 - todayDate.getHours() + inputHours)
+    : (timerHours = inputHours - todayDate.getHours());
+
   counter = (timerHours * 60 + timerMinutes - 1) * 60 + todayDate.getSeconds();
 
   const interval = setInterval(function () {
