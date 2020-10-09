@@ -255,21 +255,21 @@
 // let days = (today - birthday) / (1000 * 60 * 60 * 24)
 // console.log(days);
 
-let array = [5, 23, -110, 3, 18, 0, 14];
-array.forEach((elem) => (elem % 2 ? console.log(elem) : true)); /// a
-console.log(array.map((elem) => elem + 20)); /// b
-console.log(array.filter((elem) => elem > 0)); /// c
-console.log(
-  array.reduce((sum, elem) => {
-    return Math.abs(elem % 3) + sum;
-  }, 0)
-); /// d
-console.log(array.some((elem) => elem === 5)); //// e
-console.log(array.slice(1)); //// f
-console.log(array.sort((a, b) => a - b)); /// g
+// let array = [5, 23, -110, 3, 18, 0, 14];
+// array.forEach((elem) => (elem % 2 ? console.log(elem) : true)); /// a
+// console.log(array.map((elem) => elem + 20)); /// b
+// console.log(array.filter((elem) => elem > 0)); /// c
+// console.log(
+//   array.reduce((sum, elem) => {
+//     return Math.abs(elem % 3) + sum;
+//   }, 0)
+// ); /// d
+// console.log(array.some((elem) => elem === 5)); //// e
+// console.log(array.slice(1)); //// f
+// console.log(array.sort((a, b) => a - b)); /// g
 
-let str = "new-array new-string new-task new-job new-life";
-console.log(str.replace(/-\w/gi, (x) => x[1].toUpperCase()));
+// let str = "new-array new-string new-task new-job new-life";
+// console.log(str.replace(/-\w/gi, (x) => x[1].toUpperCase()));
 
 // const btnStart = document.querySelector(".btn_start");
 // const main = document.querySelector(".main");
@@ -292,3 +292,20 @@ console.log(str.replace(/-\w/gi, (x) => x[1].toUpperCase()));
 // btnStart.addEventListener("click", () => {
 //   timer();
 // });
+
+let str = "AAAabcBB";
+let arr = "";
+if (str.length % 2) {
+  arr = str.slice(str.length / 2 - 1, str.length / 2 + 2);
+} else {
+  arr = str.slice(str.length / 2 - 2, str.length / 2 + 2);
+}
+console.log(arr);
+console.log(/abc/.test(arr));
+console.log(str.length);
+console.log(str.length / 2);
+// console.log(arr[0].length);
+// for (let i = 0; i < arr.length - 1; i++) {
+//   let diff = Math.abs(arr[i].length - arr[i + 1].length);
+//   diff > 1 ? console.log(false) : console.log(true);
+// }

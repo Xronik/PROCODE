@@ -1,19 +1,20 @@
 @font-face {
-    font-family: 'fontello';
+    font-family: "fontello";
     src: url(../fonts/fontello.woff2);
 }
 @font-face {
-    font-family: 'iconic';
+    font-family: "iconic";
     src: url(../fonts/fontello2.woff);
 }
 
 .timer {
-    width: 160px;
-	height: 45px;
+    width: 230px;
+    height: 45px;
     font-weight: bold;
-	font-size: 45px;
+    font-size: 45px;
+    line-height: 45px;
     position: relative;
-    display:block;
+    display: block;
     transition: opacity 1s linear;
 }
 
@@ -43,9 +44,9 @@
 }
 
 @keyframes spin {
-  100% {
-    transform: rotate(-360deg);
-  }  
+    100% {
+        transform: rotate(-360deg);
+    }
 }
 
 .btm-line {
@@ -59,7 +60,7 @@
     width: 160px;
     line-height: 25px;
     font-size: 25px;
-    font-family: 'fontello';
+    font-family: "fontello";
     border: 1px solid #000;
 }
 
