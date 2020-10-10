@@ -14,7 +14,7 @@ let count = (array) => { // Подсчитываем суму всех не ну
     let sum = null
     for (key in array) {
         for (i = 0; i < array[key].length; i++) {
-            sum += array[key][i]
+            if (array[key][i]) { sum++ }
         }
     }
     return sum
@@ -57,19 +57,29 @@ newBoard[0][0] = 1
 boardDisplay(newBoard)
 let cells = document.getElementsByClassName('cell')
 
+let moveCell = (position, sdvig) => {  // Движение влево
+    path(newBoard)
+    // console.log(position)
+    // console.log(sdvig)
+    if (currentPosition[position] > 0) {
+        currentPosition[position] += sdvig
+        if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
+            currentPosition[position] -= sdvig
+        }
+        newBoard[currentPosition[0]][currentPosition[1]] = 1
+        boardDisplay(newBoard)
+    }
+}
 let moveLeft = () => {  // Движение влево
     path(newBoard)
     if (currentPosition[1] > 0) {
         currentPosition[1]--
         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
             currentPosition[1]++
-            btnOff(btn[0])
-        } else {
-            btnOn(btn[0], '&#8592;')
-        };
+        }
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
-    } else { btnOff(btn[0]) }
+    }
 }
 let moveUp = () => {  // Движение вверх
     path(newBoard)
@@ -77,13 +87,10 @@ let moveUp = () => {  // Движение вверх
         currentPosition[0]--
         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
             currentPosition[0]++
-            btnOff(btn[1])
-        } else {
-            btnOn(btn[1], '&#8593;')
-        };
+        }
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
-    } else { btnOff(btn[1]) }
+    }
 }
 let moveDown = () => {  // Движение вниз
     path(newBoard)
@@ -91,13 +98,10 @@ let moveDown = () => {  // Движение вниз
         currentPosition[0]++
         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
             currentPosition[0]--
-            btnOff(btn[2])
-        } else {
-            btnOn(btn[2], '&#8595;')
-        };
+        }
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
-    } else { btnOff(btn[2]) }
+    }
 }
 let moveRight = () => {  // Движение вправо
     path(newBoard)
@@ -105,35 +109,46 @@ let moveRight = () => {  // Движение вправо
         currentPosition[1]++
         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
             currentPosition[1]--
-            btnOff(btn[3])
-        } else {
-            btnOn(btn[3], '&#8594;')
-        };
+        }
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
-    } else { btnOff(btn[3]) }
+    }
 }
 let path = (array) => { // Рисуем путь
     array[currentPosition[0]][currentPosition[1]] = 2
 }
-let btnOff = (btn) => {
-    btn.style.userSelect = 'none'
-    btn.innerHTML = ''
-}
-let btnOn = (btn, value) => {
-    btn.style.userSelect = 'auto'
-    btn.innerHTML = `${value}`
-}
 
-btn[0].addEventListener("mousedown", moveLeft);
-btn[1].addEventListener("mousedown", moveUp);
-btn[2].addEventListener("mousedown", moveDown);
+
+// let btnOff = (btn) => {
+//     btn.style.cursor = 'none'
+//     btn.innerHTML = ''
+// }
+// let btnOn = (btn, value) => {
+//     btn.style.cursor = 'pointer'
+//     btn.innerHTML = `${value}`
+// }
+
+// let btnCheck = () => {
+//     btn.forEach((element) => {
+//         btnOn()
+//     })
+//     if (currentPosition[1] > 0) {
+//         currentPosition[1]--
+//         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
+//             currentPosition[1]++
+//             btnOff(btn[0])
+//         }
+//     }
+// }
+btn[0].addEventListener("mousedown", moveCell(1, -1));
+btn[1].addEventListener("mousedown", moveCell('0', '-1'));
+btn[2].addEventListener("mousedown", moveCell(0, 1));
 btn[3].addEventListener("mousedown", moveRight);
 
-document.addEventListener("keydown", (e) => {
-    e.code == "ArrowLeft" ? moveLeft() : true;
-    e.code == "ArrowUp" ? moveUp() : true;
-    e.code == "ArrowDown" ? moveDown() : true;
-    e.code == "ArrowRight" ? moveRight() : true;
-});
+// document.addEventListener("keydown", (e) => {
+//     e.code == "ArrowLeft" ? move(1, -1) : true;
+//     e.code == "ArrowUp" ? move(0, -1) : true;
+//     e.code == "ArrowDown" ? move(0, 1) : true;
+//     e.code == "ArrowRight" ? move(1, 1) : true;
+// });
 
