@@ -58,37 +58,37 @@ boardDisplay(newBoard)
 let cells = document.getElementsByClassName('cell')
 
 let moveRight = () => {  // Движение вправо
-    // newBoard = board(5, 5, null)
     path(newBoard)
     if (currentPosition[1] < newBoard.length - 1) {
         currentPosition[1]++
+        if (newBoard[currentPosition[0]][currentPosition[1]] === 2) { currentPosition[1]-- } else { true };
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
     }
 }
-let moveLeft = () => {  // Движение влево
-    // newBoard = board(5, 5, null)
+let moveLeft = (event) => {  // Движение влево
     path(newBoard)
     if (currentPosition[1] > 0) {
         currentPosition[1]--
+        if (newBoard[currentPosition[0]][currentPosition[1]] === 2) { currentPosition[1]++ } else { true };
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
     }
 }
 let moveUp = () => {  // Движение вверх
-    // newBoard = board(5, 5, null)
     path(newBoard)
     if (currentPosition[0] > 0) {
         currentPosition[0]--
+        if (newBoard[currentPosition[0]][currentPosition[1]] === 2) { currentPosition[0]++ } else { true };
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
     }
 }
 let moveDown = () => {  // Движение вниз
-    // newBoard = board(5, 5, null)
     path(newBoard)
     if (currentPosition[0] < newBoard.length - 1) {
         currentPosition[0]++
+        if (newBoard[currentPosition[0]][currentPosition[1]] === 2) { currentPosition[0]-- } else { true };
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
     }
@@ -96,6 +96,7 @@ let moveDown = () => {  // Движение вниз
 let path = (array) => { // Рисуем путь
     array[currentPosition[0]][currentPosition[1]] = 2
 }
+
 let btn = document.querySelectorAll('.btn')
 btn[0].addEventListener("mousedown", moveLeft);
 btn[1].addEventListener("mousedown", moveUp);
