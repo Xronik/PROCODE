@@ -18,6 +18,9 @@
 .black {
     background-color: black;
 }
+.red {
+    background-color: red;
+}
 .buttons {
     margin: 20px auto 0;
     display: flex;

@@ -27,6 +27,7 @@ let currentPosition = []
 let boardDisplay = (array) => {  // Отрисовуем доску со статусомклеток
     let cellWhite = '<div class="cell white"></div>'
     let cellBlack = '<div class="cell black"></div>'
+    let cellRed = '<div class="cell red"></div>'
     let str = ''
     let positionY = -1
     let x = -1
@@ -37,9 +38,13 @@ let boardDisplay = (array) => {  // Отрисовуем доску со ста�
             let positionX = x % 5
             if (element2 === null) {
                 str += cellWhite
-            } else {
+            }
+            if (element2 === 1) {
                 str += cellBlack
                 currentPosition = [positionY, positionX]
+            }
+            if (element2 === 2) {
+                str += cellRed
             }
         })
     });
@@ -53,7 +58,8 @@ boardDisplay(newBoard)
 let cells = document.getElementsByClassName('cell')
 
 let moveRight = () => {  // Движение вправо
-    newBoard = board(5, 5, null)
+    // newBoard = board(5, 5, null)
+    path(newBoard)
     if (currentPosition[1] < newBoard.length - 1) {
         currentPosition[1]++
         newBoard[currentPosition[0]][currentPosition[1]] = 1
@@ -61,7 +67,8 @@ let moveRight = () => {  // Движение вправо
     }
 }
 let moveLeft = () => {  // Движение влево
-    newBoard = board(5, 5, null)
+    // newBoard = board(5, 5, null)
+    path(newBoard)
     if (currentPosition[1] > 0) {
         currentPosition[1]--
         newBoard[currentPosition[0]][currentPosition[1]] = 1
@@ -69,7 +76,8 @@ let moveLeft = () => {  // Движение влево
     }
 }
 let moveUp = () => {  // Движение вверх
-    newBoard = board(5, 5, null)
+    // newBoard = board(5, 5, null)
+    path(newBoard)
     if (currentPosition[0] > 0) {
         currentPosition[0]--
         newBoard[currentPosition[0]][currentPosition[1]] = 1
@@ -77,14 +85,17 @@ let moveUp = () => {  // Движение вверх
     }
 }
 let moveDown = () => {  // Движение вниз
-    newBoard = board(5, 5, null)
+    // newBoard = board(5, 5, null)
+    path(newBoard)
     if (currentPosition[0] < newBoard.length - 1) {
         currentPosition[0]++
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
     }
 }
-
+let path = (array) => { // Рисуем путь
+    array[currentPosition[0]][currentPosition[1]] = 2
+}
 let btn = document.querySelectorAll('.btn')
 btn[0].addEventListener("mousedown", moveLeft);
 btn[1].addEventListener("mousedown", moveUp);
