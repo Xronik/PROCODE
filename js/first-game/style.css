@@ -1,0 +1,34 @@
+.main {
+    width: 270px;
+    height: 280px;
+    margin: 20px auto 0;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aqua;
+}
+.cell {
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+}
+.white {
+    background-color: white;
+}
+.black {
+    background-color: black;
+}
+.buttons {
+    margin: 20px auto 0;
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+.btn {
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
+    font-size: 22px;
+}
