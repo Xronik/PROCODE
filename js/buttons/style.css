@@ -1,0 +1,36 @@
+.main {
+    width: 270px;
+    height: 32px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn {
+    width: 100px;
+    height: 30px;
+    border: 4px solid black;
+    text-align: center;
+    line-height: 30px;
+    font-size: 22px;
+    display: block;
+
+}
+.btn2 {
+    pointer-events: none;
+    border: 4px solid rgb(150, 144, 144);
+    color: rgb(150, 144, 144);
+}
+.btn-visible {
+    pointer-events: initial;
+    color: black;
+    user-select: initial;
+    border: 4px solid black;
+}
+.txt {
+    position: relative;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.txt-content:after {  
+    content: 'Heloo!';
+}
