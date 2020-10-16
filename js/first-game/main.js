@@ -1,8 +1,8 @@
-const board = (x, y, context = '') => { // Создаем доску
+const board = (length, context = '') => { // Создаем доску
     let newArray = []
-    for (let i = 0; i < x; i++) {
+    for (let i = 0; i < length; i++) {
         let newArray2 = []
-        for (let e = 0; e < y; e++) {
+        for (let e = 0; e < length; e++) {
             newArray2[e] = context
         }
         newArray[i] = newArray2
@@ -24,7 +24,7 @@ let main = document.querySelector('.main')
 let statusField = document.querySelector('.status')
 let currentPosition = []
 
-let boardDisplay = (array) => {  // Отрисовуем доску со статусомклеток
+const boardDisplay = (array) => {  // Отрисовуем доску со статусом клеток
     let cellWhite = '<div class="cell white"></div>'
     let cellBlack = '<div class="cell black"></div>'
     let cellRed = '<div class="cell red"></div>'
@@ -52,12 +52,21 @@ let boardDisplay = (array) => {  // Отрисовуем доску со ста�
     statusField.innerHTML = `Not null cells = ${count(array)}`
 }
 
-let newBoard = board(5, 5, null);
-newBoard[0][0] = 1
+let newBoard = board(5, null);
+
+const setStartPoint = (array) => {
+    let randomPosition = () => {
+        return Math.round(Math.random() * (array.length) - 0.5)
+    }
+    newBoard[randomPosition()][randomPosition()] = 1
+}
+
+setStartPoint(newBoard)
 boardDisplay(newBoard)
 let cells = document.getElementsByClassName('cell')
 
-let moveCell = (position, sdvig) => {  // Движение влево
+
+const moveCell = (position, sdvig) => {  // Основной принцип движения
     path(newBoard)
     if ((sdvig === -1 && currentPosition[position] > 0) ||
         (sdvig === 1 && currentPosition[position] < (newBoard.length - 1))) {
@@ -68,85 +77,79 @@ let moveCell = (position, sdvig) => {  // Движение влево
         newBoard[currentPosition[0]][currentPosition[1]] = 1
         boardDisplay(newBoard)
         btnCheck(newBoard)
+        checkWays()
+        turnTime = 11
+        setGameOver()
+        setGameWin()
+        console.log(ways)
     }
     btnCheck(newBoard)
 }
 
-// let moveLeft = () => {  // Движение влево
-//     path(newBoard)
-//     if (currentPosition[1] > 0) {
-//         currentPosition[1]--
-//         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
-//             currentPosition[1]++
-//         }
-//         newBoard[currentPosition[0]][currentPosition[1]] = 1
-//         boardDisplay(newBoard)
-//     }
-// }
-// let moveUp = () => {  // Движение вверх
-//     path(newBoard)
-//     if (currentPosition[0] > 0) {
-//         currentPosition[0]--
-//         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
-//             currentPosition[0]++
-//         }
-//         newBoard[currentPosition[0]][currentPosition[1]] = 1
-//         boardDisplay(newBoard)
-//     }
-// }
-// let moveDown = () => {  // Движение вниз
-//     path(newBoard)
-//     if (currentPosition[0] < newBoard.length - 1) {
-//         currentPosition[0]++
-//         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
-//             currentPosition[0]--
-//         }
-//         newBoard[currentPosition[0]][currentPosition[1]] = 1
-//         boardDisplay(newBoard)
-//     }
-// }
-// let moveRight = () => {  // Движение вправо
-//     path(newBoard)
-//     if (currentPosition[1] < newBoard.length - 1) {
-//         currentPosition[1]++
-//         if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
-//             currentPosition[1]--
-//         }
-//         newBoard[currentPosition[0]][currentPosition[1]] = 1
-//         boardDisplay(newBoard)
-//     }
-// }
-
-let path = (array) => { // Рисуем путь
+const path = (array) => { // Рисуем путь
     array[currentPosition[0]][currentPosition[1]] = 2
 }
 
-let btnOff = (btn) => {
+const btnOff = (btn) => { // Условие отключения кнопки
     btn.style.cursor = 'none'
     btn.innerHTML = ''
 }
 
-let btnOn = (btn, value) => {
+const btnOn = (btn, value) => { // Условие видимой кнопки
     btn.style.cursor = 'pointer'
     btn.innerHTML = `${value}`
 }
 
-let btnCheck = (array) => {
-    // for (i = 0; i < 4; i++) {
-    //     btnOn(btn[i])
-    // }
-    console.log(array[currentPosition[0]][currentPosition[1] - 1]);
-    (array[currentPosition[0]][currentPosition[1] - 1] >= 1 || (currentPosition[1] - 1) < 0) ? btnOff(btn[0]) : btnOn(btn[0], "&#8592;");
-    (array[currentPosition[0] - 1][currentPosition[1]] >= 1) ? btnOff(btn[1]) : btnOn(btn[1], "&#8593;");
-    (array[currentPosition[0] + 1][currentPosition[1]] >= 1) ? btnOff(btn[2]) : btnOn(btn[2], "&#8595;");
-    (array[currentPosition[0]][currentPosition[1] + 1] >= 1) ? btnOff(btn[3]) : btnOn(btn[3], "&#8594;");
-    console.log(null);
-    // if (newBoard[currentPosition[0]][currentPosition[1]] === 2) {
-    //     currentPosition[1]++
-    //     btnOff(btn[0])
-    // }
+const btnCheck = (array) => { ///  Проверка условий для отображения кнопок
+    if (currentPosition[1] !== 0) {
+        array[currentPosition[0]][currentPosition[1] - 1] >= 1 ? btnOff(btn[0]) : btnOn(btn[0], "&#8592;")
+    } else { btnOff(btn[0]) }
+    if (currentPosition[0] !== 0) {
+        array[currentPosition[0] - 1][currentPosition[1]] >= 1 ? btnOff(btn[1]) : btnOn(btn[1], "&#8593;");
+    } else { btnOff(btn[1]) }
+    if (currentPosition[0] !== array.length - 1) {
+        array[currentPosition[0] + 1][currentPosition[1]] >= 1 ? btnOff(btn[2]) : btnOn(btn[2], "&#8595;");
+    } else { btnOff(btn[2]) }
+    if (currentPosition[1] !== array.length - 1) {
+        array[currentPosition[0]][currentPosition[1] + 1] >= 1 ? btnOff(btn[3]) : btnOn(btn[3], "&#8594;");
+    } else { btnOff(btn[3]) }
 }
 
+let ways = null
+const checkWays = () => {  /// Подсчитываем свободные ходы
+    ways = 0
+    btn.forEach(elem => { elem.innerHTML == '' ? ways++ : true; })
+}
+
+let turnTime = 11
+const timer = setInterval(() => {  ///   Таймер
+    let timer = document.querySelector('.timer')
+    turnTime--
+    timer.innerHTML = `Время на ход: ${turnTime}`
+}, 1000)
+
+const restartGame = () => {
+    newBoard = board(5, null);
+    setStartPoint(newBoard)
+    boardDisplay(newBoard)
+}
+
+const setGameOver = () => {
+    if (ways === 4 || turnTime === 0) {
+        if (confirm(`GAME OVER! Your score: ${count(newBoard)}. Начать новую игру?`)) {
+            restartGame()
+        }
+    }
+}
+const setGameWin = () => {
+    if (count(newBoard) === newBoard.length ** 2) {
+        if (confirm(`YOU WIN! CONGRATULATIONS! Your score: ${count(newBoard)}. Начать новую игру?`)) {
+            restartGame()
+        }
+    }
+}
+
+btnCheck(newBoard)
 
 btn[0].addEventListener("mousedown", () => moveCell(1, -1));
 btn[1].addEventListener("mousedown", () => moveCell(0, -1));

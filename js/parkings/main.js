@@ -10,11 +10,13 @@ let btnOk = document.querySelector('.btn-ok')
 let btnCancel = document.querySelector('.btn-no')
 let parkingTime = document.querySelector('.parking-time')
 
-for (i = 1; i <= 10; i++) {   /// Создаем парковку
-    let parkingSlot = { id: i, status: 'free', time: 0 };
-    parking.push(parkingSlot);
-};
-
+const setParking = (number) => {
+    for (i = 1; i <= number; i++) {   /// Создаем парковку
+        let parkingSlot = { id: i, status: 'free', time: 0 };
+        parking.push(parkingSlot);
+    };
+}
+setParking(10)
 const countFreeParking = (array) => {  /// Подсчитываем количество свободных мест
     let freeParking = null;
     array.forEach(element => {
