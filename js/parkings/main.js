@@ -1,5 +1,5 @@
 let parking = [];
-let index = null
+let index = 0
 let main = document.querySelector('.main')
 let time = document.querySelector('.time')
 let inputFree = document.querySelector('.input-free-wrap')
@@ -49,11 +49,13 @@ parkingSlot.forEach(element => {   /// Обработка ивента при н
     element.addEventListener('click', () => {
         index = element.id - 1
         if (checkParkingStatus(parking[index])) {
+            inputOcupied.classList.remove('visible')
             inputFree.classList.add('visible')
+
         } else {
+            inputFree.classList.remove('visible')
             inputOcupied.classList.add('visible')
-            parkingTime.innerHTML = `Время парковки до ${parking[index].time}`
-            console.dir(inputOcupied)
+            parkingTime.innerHTML = `Оставшееся время: ${calcTimeLast()}`
         }
     })
 })
@@ -62,11 +64,37 @@ const refreshStatus = () => {  /// Обновляем статус парков�
     parkingSlot[index].innerHTML = `Номер места: ${parking[index].id}</br> Статус: ${parking[index].status}</br>Время парковки: ${parking[index].time}`
 }
 
+const parsTimeInput = () => {   /// Преобразуем стринговое значение ввода времени в localdate
+    let m = moment()
+    let inputHours = inputTime.value.slice(0, 2)
+    let inputMinutes = inputTime.value.slice(-2)
+    inputHours < moment().hour() ? m.add(1, 'd') : true;
+    let input = m.hours(inputHours).minutes(inputMinutes)
+    return input
+}
+
+const calcTimeLast = () => {   /// Подсчет оставшегося времени парковки
+    let timeDiff = parsTimeInput() - moment() /// Разница во времени между концом парковки и нынешним временем
+    let timeLast = `${moment.utc(timeDiff).format('hh:mm')}`  /// Вывод оставшегося времени
+    return timeLast
+}
+
+const checkAllert = () => {  /// Всплывающий алерт если количество свободных парковок <20% и время от 9-00 до 18-00
+    let inputHours = inputTime.value.slice(0, 2)
+    if ((countFreeParking(parking) < parking.length * 0.2) && (inputHours > 9) && (inputHours < 18)) {
+        if (!confirm('Желательно не занимать парковку! Продолжить действие?')) {
+            parking[index].status = 'free'
+            parking[index].time = 0
+            parkingSlot[index].classList.remove('ocupied')
+        }
+    }
+}
+
 btnInput.addEventListener('click', () => {   /// Обработка ивента - ввод времени парковки
     parking[index].status = 'ocupied'
     parking[index].time = inputTime.value
-    calcTimeLast()
     parkingSlot[index].classList.add('ocupied')
+    checkAllert()
     refreshStatus()
     displayCurrentTime()
     inputFree.classList.remove('visible')
@@ -85,18 +113,3 @@ btnCancel.addEventListener('click', () => {   /// Обработка ивент�
     inputOcupied.classList.remove('visible')
 })
 
-const calcTimeLast = () => {
-    // let qwe = new Date().toLocaleTimeString('ua-UA', { hour: '2-digit', minute: '2-digit' })
-    // let new1 = new Date() + ((inputTime.value.slice(0, 2) - qwe.slice(0, 2)) * 3600000 + (inputTime.value.slice(-2) - qwe.slice(-2)) * 60000)
-    // let new2 = new Date(new1).toLocaleTimeString('ua-UA', { hour: '2-digit', minute: '2-digit' })
-    // console.log(qwe)
-    // console.log(inputTime.value)
-    // console.log(inputTime.value.slice(0, 2) - qwe.slice(0, 2))
-    // console.log(inputTime.value.slice(-2) - qwe.slice(-2))
-    // console.log(new1)
-    // console.log(new2)
-    let m = moment()
-    m.hours(inputTime.value.slice(0, 2))
-    m.minutes(inputTime.value.slice(-2))
-    console.log(m.toString())
-}
