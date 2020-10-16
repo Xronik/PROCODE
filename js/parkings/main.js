@@ -64,10 +64,10 @@ const refreshStatus = () => {  /// Обновляем статус парков�
     parkingSlot[index].innerHTML = `Номер места: ${parking[index].id}</br> Статус: ${parking[index].status}</br>Время парковки: ${parking[index].time}`
 }
 
-const parsTimeInput = () => {   /// Преобразуем стринговое значение ввода времени в localdate
+const parsTimeInput = () => {   /// Преобразуем стринговое значение время парковки в localdate
     let m = moment()
-    let inputHours = inputTime.value.slice(0, 2)
-    let inputMinutes = inputTime.value.slice(-2)
+    let inputHours = parking[index].time.slice(0, 2)
+    let inputMinutes = parking[index].time.slice(-2)
     inputHours < moment().hour() ? m.add(1, 'd') : true;
     let input = m.hours(inputHours).minutes(inputMinutes)
     return input
