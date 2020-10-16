@@ -79,9 +79,8 @@ const moveCell = (position, sdvig) => {  // Основной принцип дв
         btnCheck(newBoard)
         checkWays()
         turnTime = 11
-        setGameOver()
         setGameWin()
-        console.log(ways)
+        setGameOver()
     }
     btnCheck(newBoard)
 }
@@ -130,6 +129,7 @@ const timer = setInterval(() => {  ///   Таймер
 
 const restartGame = () => {
     newBoard = board(5, null);
+    ways = 0
     setStartPoint(newBoard)
     boardDisplay(newBoard)
 }
@@ -142,7 +142,7 @@ const setGameOver = () => {
     }
 }
 const setGameWin = () => {
-    if (count(newBoard) === newBoard.length ** 2) {
+    if (count(newBoard) === (newBoard.length ** 2)) {
         if (confirm(`YOU WIN! CONGRATULATIONS! Your score: ${count(newBoard)}. Начать новую игру?`)) {
             restartGame()
         }
