@@ -125,7 +125,7 @@ const timer = setInterval(() => {  ///   Таймер
     let timer = document.querySelector('.timer')
     turnTime--
     timer.innerHTML = `Время на ход: ${turnTime}`
-    if (turnTime < 0) {
+    if (turnTime === 0) {
         if (confirm(`GAME OVER! Your score: ${count(newBoard)}. Начать новую игру?`)) {
             restartGame()
         }
