@@ -13,7 +13,7 @@ const createBoardArr = (yAhis, xAhis) => { /// Создаем массив иг�
     return fullArr
 }
 
-let gamingBoard = createBoardArr(8, 5)
+let gamingBoard = createBoardArr(8, 8)
 
 const displayBoard = (array, cellWidthHeight) => {  /// Отрисовываем игровое поле
     let boardCells = ''
@@ -80,9 +80,17 @@ const boardCellsClick = () => {  /// Ивент на клике - отрисов
             } else {
                 event.target.style.backgroundImage = choseOfCardDisplay(topDeckCard)
                 displayCardDeck()
+                countOfCardsLast()
             }
         })
     })
 }
 
 boardCellsClick()
+
+const countOfCardsLast = () => {
+    let cardLeftDiv = document.querySelector('.card-left')
+    cardLeftDiv.innerHTML = `Осталось карт: ${cardDeckArr.length}`
+}
+
+countOfCardsLast()
