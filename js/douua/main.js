@@ -1,5 +1,6 @@
 const fs = require('fs')  /// Подключаем библиотек FS
 const request = require('request');   ///  Подключаем библиотеку Request
+const http = require('http')
 
 const file = 'img.svg'
 const arrayrOfDirs = ['dir1','dir2']
@@ -36,3 +37,13 @@ request('http://dou.ua', function (err, response, body) {  ///  Делаем з�
 
     fs.writeFileSync('arr.txt', strOfSrc)  ///  Записываем ссылки в файл arr.txt
 });
+
+module.exports = {strOfSrc}
+
+// http.createServer((req, res) => {
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+//     fs.readFile('index.html', (err, data)=>{
+//         res.write(data)
+//     })
+// }).listen(8000);
+

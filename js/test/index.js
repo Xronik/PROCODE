@@ -293,19 +293,125 @@
 //   timer();
 // });
 
-let str = "AAAabcBB";
-let arr = "";
-if (str.length % 2) {
-  arr = str.slice(str.length / 2 - 1, str.length / 2 + 2);
-} else {
-  arr = str.slice(str.length / 2 - 2, str.length / 2 + 2);
-}
-console.log(arr);
-console.log(/abc/.test(arr));
-console.log(str.length);
-console.log(str.length / 2);
+// let str = "AAAabcBB";
+// let arr = "";
+// if (str.length % 2) {
+//   arr = str.slice(str.length / 2 - 1, str.length / 2 + 2);
+// } else {
+//   arr = str.slice(str.length / 2 - 2, str.length / 2 + 2);
+// }
+// console.log(arr);
+// console.log(/abc/.test(arr));
+// console.log(str.length);
+// console.log(str.length / 2);
 // console.log(arr[0].length);
 // for (let i = 0; i < arr.length - 1; i++) {
 //   let diff = Math.abs(arr[i].length - arr[i + 1].length);
 //   diff > 1 ? console.log(false) : console.log(true);
 // }
+// var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+// const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+
+// const fetch = require('node-fetch');
+// main ()
+// function main () {
+//     const request = new XMLHttpRequest()
+//     request.open("GET", url, false)
+//     request.send()
+//     console.log(request.responseText)
+// }
+
+// function main () {
+//     fetch(url)
+//     .then(response =>{
+//         response.json()
+//     })
+//     .then(data =>{
+//         console.log(data)
+//     })
+// }
+
+// const fs = require('fs')
+
+// fetch('https://dou.ua')
+//   .then(response =>response.text())
+//   .then(commits =>  fs.writeFile('index2.html', commits, callback()));
+
+// const callback = () => {
+//     console.log('write err')
+// }
+
+// const request = require('request')
+
+// request('http://dou.ua', function (error, response, body) {
+//     console.log(response.statusCode)
+// });
+
+// let str = 'hello2'
+// let file = '1.txt'
+
+// fs.writeFile(file, str, () => {
+//     fs.readFile(file, 'utf8', (err, data)=>{
+//         console.log(data)
+//     })
+// })
+
+// fs.unlinkSync(file)
+
+// const fs = require('fs')  /// Подключаем библиотек FS
+// const file = 'img.svg'
+// const arrayrOfDirs = ['dir1','dir2']
+
+// arrayrOfDirs.forEach((element)=>{  ///  Создаем папки из массива
+//     fs.mkdir(element, (err)=> {
+//         if (err) console.log(`${element} allready exists`)
+//     })
+// })
+
+// fs.writeFileSync(file)  ///  Создаем картинку
+
+// const oldPath = 'img.svg'  ///  Указываем путь к начальной папку
+// const newPath = 'dir1/img.svg'  ///  Указываем путь следующей папки
+
+// fs.rename(oldPath, newPath, function (err) {  ///  Переносим картинку из основной папки в другую
+//   if (err) throw err
+//   console.log('Successfully renamed - file moved!')
+// })
+
+// const request = require('request');   ///  Подключаем библиотеку Request
+
+// request('http://dou.ua', function (err, response, body) {  ///  Делаем запрос на DOU
+//     let strOfRequest = body
+
+//     let from = strOfRequest.search('b-footer-slider')  ///  Обрезаем футер с картинками
+//     let to = strOfRequest.search('footer-lang-switch')
+//     let newStrOfRequest = strOfRequest.substring(from,to)
+//     let strOfSrc = ''
+
+//     while (newStrOfRequest.includes('src')) {  ///  Вырезаем из футера все ссылки на картинки
+//         let startIndex = newStrOfRequest.search('src')
+//         let stopIndex = newStrOfRequest.search('srcset')
+//         strOfSrc += newStrOfRequest.substring(startIndex,stopIndex) + '\n'
+//         newStrOfRequest = newStrOfRequest.slice(stopIndex +2)
+//     }   
+
+//     fs.writeFileSync('arr.txt', strOfSrc)  ///  Записываем ссылки в файл arr.txt
+// });
+
+console.time()
+const fs = require('fs')
+const edges = [1, 12345678]
+const numberLength = 8
+
+
+let nullStr = '0'.repeat(numberLength)
+let str = ''
+let newNumber = ''
+for (i = edges[0]; i < edges[1]; i++){
+    newNumber = (nullStr + String(i)).slice(-8)
+    str += newNumber + '\n'
+}
+
+fs.writeFileSync('list.txt', str)
+console.timeEnd()
