@@ -1,11 +1,36 @@
+.main {
+    display: flex;
+    justify-content: start;
+    width: 250px;
+    height: 25px;
+    margin: 20px auto 0;
+}
+
 .rectangle {
     width: 100px;
-    height: 150px;
+    height: 25px;
     background-color: blue;
     border: 1px solid black;
-    display: inline-block;
-    margin-right: 20px;
+    display: none;
+    margin-left: 20px;
 }
-.red {
-    background-color: red;
+
+.btn {
+    width: 40px;
+    height: 0;
+    cursor: pointer;
+    transition: height linear;
+    transition-duration: 3s;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 25px;
+}
+
+.visible {
+    display: block;
+}
+
+.transform {
+    height: 25px;
+    border: 1px solid black;
 }

@@ -293,19 +293,42 @@
 //   timer();
 // });
 
-let str = "AAAabcBB";
-let arr = "";
-if (str.length % 2) {
-  arr = str.slice(str.length / 2 - 1, str.length / 2 + 2);
-} else {
-  arr = str.slice(str.length / 2 - 2, str.length / 2 + 2);
-}
-console.log(arr);
-console.log(/abc/.test(arr));
-console.log(str.length);
-console.log(str.length / 2);
+// let str = "AAAabcBB";
+// let arr = "";
+// if (str.length % 2) {
+//   arr = str.slice(str.length / 2 - 1, str.length / 2 + 2);
+// } else {
+//   arr = str.slice(str.length / 2 - 2, str.length / 2 + 2);
+// }
+// console.log(arr);
+// console.log(/abc/.test(arr));
+// console.log(str.length);
+// console.log(str.length / 2);
 // console.log(arr[0].length);
 // for (let i = 0; i < arr.length - 1; i++) {
 //   let diff = Math.abs(arr[i].length - arr[i + 1].length);
 //   diff > 1 ? console.log(false) : console.log(true);
 // }
+
+let main = document.querySelector('.main')
+let btn = document.querySelectorAll('.btn')
+
+let btnAnimation = (element, time, callback = false) => {
+  setTimeout(() => {
+    element.classList.add('transform')
+    if (callback) callback();
+  }, time);
+}
+btnAnimation(btn1, 3000, () => {
+  btnAnimation(btn2, 2000, () => {
+    btnAnimation(btn3, 1000)
+  })
+})
+
+btn.forEach((element) => {
+  element.addEventListener('click', (event) => {
+    event.target.nextElementSibling.classList.toggle('visible')
+    console.dir(event.target)
+  })
+})
+
