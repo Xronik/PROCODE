@@ -309,6 +309,7 @@
 //   let diff = Math.abs(arr[i].length - arr[i + 1].length);
 //   diff > 1 ? console.log(false) : console.log(true);
 // }
+
 // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 // const url = 'https://www.cbr-xml-daily.ru/daily_json.js'
@@ -415,3 +416,5 @@ for (i = edges[0]; i < edges[1]; i++){
 
 fs.writeFileSync('list.txt', str)
 console.timeEnd()
+
+
